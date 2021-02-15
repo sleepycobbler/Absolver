@@ -1,4 +1,4 @@
-import App from './App';
+import App from './oldApp';
 import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
@@ -6,147 +6,189 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Square(props)  {
-    return (
-      <button 
-      className="square" 
-      onClick={props.onClick}
-      >
-        {props.value}
-      </button>
-    );
+class Sidebar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: <p>Im a sidebar</p>
+        };
+      }
+
+      render() {
+        return (
+            <div className="Absolver-sidebar">
+                {this.state.value}
+            </div>)
+      }
 }
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return (<Square 
-      value={this.props.squares[i]}
-      onClick={() => this.props.onClick(i)}
-    />);
-  }
+class Footer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: (
+            <React.Fragment>
+            <a href="https://github.com/sleepycobbler/Absolver">
+                <p>
+                    Github
+                </p>
+            </a>
+            <a href="https://twitter.com/maxistired">
+                <p>
+                    Twitter
+                </p>
+            </a>
+            </React.Fragment>),
+        };
+      }
 
-  render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="Absolver-footer">
+                {this.state.value}
+            </div>)
+    }
 }
 
-class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      history: [{
-        squares: Array(9).fill(null),
-      }],
-      stepNumber: 0,
-      xIsNext: true,
-    };
-  }
+class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: <h1>Absolver Deckbuilder</h1>,
+        };
+      }
 
-  handleClick(i) {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
-    const current = history[this.state.stepNumber];
-    const squares = current.squares.slice();
-    if (calculateWinner(squares) || squares[i]) {
-      return;
+      render() {
+        return (
+            <div className="Absolver-header">
+                {this.state.value}
+            </div>)
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      history: history.concat([{
-        squares: squares,
-      }]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext,
-    });
-  }
-
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
-  }
-
-  render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
-    const winner = calculateWinner(current.squares);
-    const moves = history.map((step, move) => {
-      const desc = move ?
-        'Go to move #' + move :
-        'Go to game start';
-      return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-
-    let status;
-    if (winner) {
-      status = 'Winner: ' + winner
-    } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-    }
-
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board 
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
-    );
-  }
 }
 
-function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+
+
+class Move extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: "A move"
+        }
     }
-  }
-  return null;
+    render() {
+        return (
+            <div className="Absolver-move">{this.state.value}</div>
+        )
+    }
+}
+
+class Stance extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: "A stance"
+        }
+    }
+    render() {
+        return (
+            <div className="Absolver-stance">{this.state.value}</div>
+        )
+    }
+}
+
+class Alt extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: props.value
+        }
+    }
+        render() {
+            return (
+                <div className="Absolver-altmove">
+                <Stance></Stance>
+                <Move></Move>
+                <Stance></Stance>
+                </div>
+            );
+        }
+    }
+
+
+class Deckrow extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: props.value
+        }
+    }
+
+    render() {
+        return (
+            <div className="Absolver-deckrow">
+            <div className="Absolver-combo">
+            <Stance></Stance>
+            <Move></Move>
+            <Stance></Stance>
+            <Move></Move>
+            <Stance></Stance>
+            <Move></Move>
+            <Stance></Stance>
+            </div>
+            <Alt></Alt>
+            </div>
+        );
+    }
+}
+
+class Deckbuilder extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: "this.props.moves"
+        };
+      }
+
+      render() {
+        return (
+            <div className="Absolver-deckbuilder">
+                <Deckrow value={0}></Deckrow>
+                <Deckrow value={1}></Deckrow>
+                <Deckrow value={2}></Deckrow>
+                <Deckrow value={3}></Deckrow>
+            </div>) 
+    }
+}
+
+class Absolver extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          deckType: 0,
+          deckHistory: [{
+              deckState: Array(16).fill(null),
+            }],
+        };
+      }
+
+    render() {
+        return (
+            <div className="Absolver-app">
+                <Header></Header>
+                <div className="Absolver-body">
+                    <Sidebar></Sidebar>
+                    <Deckbuilder></Deckbuilder>
+                </div>
+                <Footer></Footer>
+            </div>
+        )
+    }
 }
 
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <Absolver />,
   document.getElementById('root')
 );
 

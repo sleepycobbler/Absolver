@@ -1,50 +1,91 @@
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
-ol, ul {
-  padding-left: 30px;
+#root {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+p {
+    margin: 0px;
 }
 
-.status {
-  margin-bottom: 10px;
+a {
+    margin: 10px;
 }
 
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
+.Absolver-app {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
 }
 
-.square:focus {
-  outline: none;
+.Absolver-body {
+    display: flex;
+    flex-grow: 1;
 }
 
-.kbd-navigation .square:focus {
-  background: #ddd;
+.Absolver-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.game {
-  display: flex;
-  flex-direction: row;
+.Absolver-header > h1 {
+    margin: 0px;
 }
 
-.game-info {
-  margin-left: 20px;
+.Absolver-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.Absolver-sidebar {
+    display: none;
+}
+
+.Absolver-deckbuilder {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.Absolver-deckrow {
+    display: flex;
+    margin-bottom: 32px;
+}
+.Absolver-combo {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+.Absolver-altmove {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    margin-left: 50px;
+}
+
+.Absolver-stance {
+    width: 64px;
+    height: 64px;
+    background-color: blue;
+}
+
+.Absolver-move {
+    width: 104px;
+    height: 104px;
+    background-color: red;
 }
