@@ -64,18 +64,19 @@ a {
 
 .Absolver-deckrow {
     display: flex;
-    margin-bottom: 32px;
+    flex-flow: row wrap;
 }
 .Absolver-combo {
     display: flex;
     align-items: center;
     justify-content: baseline;
+    margin: 16px;
 }
 .Absolver-altmove {
     display: flex;
     align-items: center;
     justify-content: baseline;
-    margin-left: 50px;
+    margin: 16px;
 }
 
 .Absolver-stance {
