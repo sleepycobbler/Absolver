@@ -91,7 +91,7 @@ class Stance extends React.Component {
     }
     render() {
         return (
-            <div className="Absolver-stance">{this.state.value}</div>
+            <div className="Absolver-stance"></div>
         )
     }
 }

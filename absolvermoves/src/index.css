@@ -94,6 +94,10 @@ a {
     background-color: red;
 }
 
+.Absolver-combo > div {
+    border: 1px solid black;
+}
+
 @media only screen and (max-width: 600px) {
     .Absolver-combo {
         display: flex;
@@ -102,10 +106,6 @@ a {
         margin: 16px;
         max-width:318px;
         justify-content: space-between;
-    }
-
-    .Absolver-combo > div {
-        border: 1px solid black;
     }
 
     .Absolver-combo :nth-child(1) {
