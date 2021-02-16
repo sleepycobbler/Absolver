@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    background-color:rgba(95,106,133,1);
 }
 
 #root {
@@ -10,7 +11,6 @@ html, body {
     padding: 0px;
     width: 100%;
     height: 100%;
-    background-color:cadetblue;
 }
 
 p {
@@ -38,6 +38,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    background-color: azure;
 }
 
 .Absolver-header > h1 {
@@ -49,6 +50,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    background-color: azure;
 }
 
 .Absolver-sidebar {
@@ -87,23 +89,110 @@ a {
 .Absolver-stance {
     width: 64px;
     height: 64px;
-    background-color: blue;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.Absolver-stance-square-active {
+    width: 22px;
+    height: 22px;
+    background-color: #545255;
+    transform: rotate(45deg);
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.Absolver-stance-square-inactive {
+    width: 22px;
+    height: 22px;
+    background-color: #545255;
+    transform: rotate(45deg);
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    opacity: 30%;
+
+}
+
+.Absolver-stance-pointer- {
+    display: none;
+}
+
+.Absolver-stance-pointer-1 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(-50%, 50%);
+}
+
+.Absolver-stance-pointer-0 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(-50%, -50%);
+}
+
+.Absolver-stance-pointer-2 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(50%, 50%);
+}
+
+.Absolver-stance-pointer-3 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
 }
 
 .Absolver-move {
     width: 104px;
     height: 104px;
-    background-image: url('images/ankle-stamp.png');
     background-size: contain;
     background-position-y: 10px;
-}
-
-.Absolver-combo > div {
+    background-color: rgba(0, 0, 0, 0.55);
     border: 1px solid black;
 }
 
+.Absolver-move-plus {
+    width: 104px;
+    height: 104px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 300%;
+    font-weight: bolder;
+    color: white;
+}
+
+.Absolver-combo > div {
+    
+}
+
 .Absolver-altmove > div {
-    border: 1px solid black;    
+        
 }
 
 @media only screen and (max-width: 600px) {
