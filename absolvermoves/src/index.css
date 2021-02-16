@@ -64,18 +64,22 @@ a {
 
 .Absolver-deckrow {
     display: flex;
-    margin-bottom: 32px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }
 .Absolver-combo {
     display: flex;
     align-items: center;
     justify-content: baseline;
+    margin: 16px;
 }
+
 .Absolver-altmove {
     display: flex;
     align-items: center;
     justify-content: baseline;
-    margin-left: 50px;
+    margin: 16px;
 }
 
 .Absolver-stance {
@@ -89,3 +93,90 @@ a {
     height: 104px;
     background-color: red;
 }
+
+@media only screen and (max-width: 600px) {
+    .Absolver-combo {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin: 16px;
+        max-width:318px;
+        justify-content: space-between;
+    }
+
+    .Absolver-combo > div {
+        border: 1px solid black;
+    }
+
+    .Absolver-combo :nth-child(1) {
+        order: 1;
+    }
+    .Absolver-combo :nth-child(3) {
+        order: 2;
+        margin-right: 17px;
+    }
+    .Absolver-combo :nth-child(5) {
+        order: 3;
+        margin-left: 17px;
+    }
+    .Absolver-combo :nth-child(7) {
+        order: 4;
+    }
+    .Absolver-combo :nth-child(2) {
+        order: 5;
+    }
+    .Absolver-combo :nth-child(4) {
+        order: 6;
+    }
+    .Absolver-combo :nth-child(6) {
+        order: 7;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+        .Absolver-combo {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            margin: 16px;
+            max-width: 162px;
+            
+        }
+
+        .Absolver-move {
+            width: 52px;
+            height:52px;
+        }
+
+        .Absolver-stance {
+            width: 32px;
+            height: 32px;
+        }
+    
+        .Absolver-combo :nth-child(1) {
+            order: 1;
+        }
+        .Absolver-combo :nth-child(3) {
+            order: 2;
+            margin-right: 1px;
+        }
+        .Absolver-combo :nth-child(5) {
+            order: 3;
+            margin-left: 1px;
+        }
+        .Absolver-combo :nth-child(7) {
+            order: 4;
+        }
+        .Absolver-combo :nth-child(2) {
+            order: 5;
+        }
+        .Absolver-combo :nth-child(4) {
+            order: 6;
+        }
+        .Absolver-combo :nth-child(6) {
+            order: 7;
+        }
+
+
+}
+
