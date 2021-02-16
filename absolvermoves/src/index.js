@@ -1,6 +1,3 @@
-import App from './oldApp';
-import store from './app/store';
-import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -77,7 +74,7 @@ class Move extends React.Component {
     }
     render() {
         return (
-            <div className="Absolver-move">{this.state.value}</div>
+            <div className="Absolver-move"></div>
         )
     }
 }
