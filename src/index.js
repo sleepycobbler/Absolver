@@ -1,7 +1,8 @@
 import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'; 
+import * as data from './moves'
 
 function Sidebar(props) {
     return (
@@ -71,32 +72,26 @@ function Alt(props) {
     );
 }
 
+function Combo(props) {
+    return (
+    <div className="Absolver-combo">
+        <Stance value={props.value}></Stance>
+        <Move value={props.rowState[0]}></Move>
+        <Stance></Stance>
+        <Move value={props.rowState[1]}></Move>
+        <Stance></Stance>
+        <Move value={props.rowState[2]}></Move>
+        <Stance></Stance>
+    </div>)
+}
 
-class Deckrow extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.value,
-            rowState: this.props.rowState,
-        }
-    }
-
-    render() {
-        return (
-            <div className="Absolver-deckrow">
-            <div className="Absolver-combo">
-            <Stance value={this.props.value}></Stance>
-            <Move value={this.props.rowState[0]}></Move>
-            <Stance></Stance>
-            <Move value={this.props.rowState[1]}></Move>
-            <Stance></Stance>
-            <Move value={this.props.rowState[2]}></Move>
-            <Stance></Stance>
-            </div>
-            <Alt value={this.props.value} rowState={this.props.rowState[3]}></Alt>
-            </div>
-        );
-    }
+function Deckrow(props) {
+    return (
+        <div className="Absolver-deckrow">
+        <Combo value={props.value} rowState={props.rowState}></Combo>
+        <Alt value={props.value} rowState={props.rowState[3]}></Alt>
+        </div>
+    );
 }
 
 function Deckbuilder(props) {
@@ -113,7 +108,7 @@ class Movelist extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            
         };
       }
 
@@ -133,21 +128,23 @@ class Movechooser extends React.Component {
         this.state = {
             deckArray: this.props.deckArray,
             rowtarget: this.props.rowtarget,
-            isCombo : false
+            rowHighlight: this.props.rowHighlight,
         };
       }
 
       render() {
         return (
             <div className="Absolver-movechooser">
-                <Stance value={this.state.rowtarget}></Stance>
-                <Move value={this.props.rowState[0]}></Move>
-                <Stance></Stance>
-                <Move value={this.props.rowState[1]}></Move>
-                <Stance></Stance>
-                <Move value={this.props.rowState[2]}></Move>
+                {this.comboOrAlt(this.state.rowtarget)}
                 <Movelist></Movelist>
             </div>) 
+    }
+
+    comboOrAlt(rowtarget) {
+        if (rowtarget < 3) {
+            return <Combo value={rowtarget} rowState={this.state.deckArray[this.state.rowHighlight]}></Combo>
+        }
+        return <Alt value={rowtarget} rowState={this.state.deckArray[this.state.rowHighlight]}></Alt>
     }
 }
 
@@ -157,6 +154,7 @@ class Absolver extends React.Component {
         this.state = {
           deckType: 0,
           sidebar: false,
+          rowHighlight: 0,
           deckHistory: [{
               barehands: [
                 Array(4).fill("+"),
@@ -181,6 +179,8 @@ class Absolver extends React.Component {
       }
 
     render() {
+        var bh_moves = data.getBareHands();
+        var sword_moves = data.getSword();
         return (
             <div className="Absolver-app">
                 <Sidebar active={this.state.sidebar} onClick={i => this.toggleSidebar()}></Sidebar>
@@ -207,6 +207,6 @@ ReactDOM.render(
 
 
 // If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
+// unregister() to register() below. Note this comes with some pitfalls. <Deckbuilder deckArray={this.state.deckHistory[0].barehands}></Deckbuilder>
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
