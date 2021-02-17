@@ -11,7 +11,7 @@ class Absolver extends React.Component {
         super(props);
         this.state = {
           deckType: 0,
-          sidebar: false,
+          isSidebarOpen: false,
           rowHighlight: 0,
           pickingMoves: false,
           deckHistory: [{
@@ -42,8 +42,8 @@ class Absolver extends React.Component {
         var sword_moves = data.getSword();
         return (
             <div className="Absolver-app">
-                <Sidebar active={this.state.sidebar} onClick={i => this.toggleSidebar()}></Sidebar>
-                <div style={{opacity: this.state.sidebar ? '50%' : '100%'}}>
+                <Sidebar active={this.state.isSidebarOpen} onClick={i => this.toggleSidebar()}></Sidebar>
+                <div style={{opacity: this.state.isSidebarOpen ? '50%' : '100%'}}>
                     <Header onClick={i => this.toggleSidebar()}></Header>
                     {this.returnMainScreen()}
                     <Footer></Footer>
@@ -53,7 +53,7 @@ class Absolver extends React.Component {
     }
 
     toggleSidebar() {
-        this.setState({sidebar: !this.state.sidebar})
+        this.setState({isSidebarOpen: !this.state.sidebar})
     }
 
     returnMainScreen() {
