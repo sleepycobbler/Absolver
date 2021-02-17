@@ -4,17 +4,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Sidebar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: <p>Im a sidebar</p>
-        };
-      }
-
       render() {
         return (
-            <div className="Absolver-sidebar">
-                {this.state.value}
+            <div style={{width: this.props.active ? "200px" : "0px"}} className="Absolver-sidebar">
+                <a href="javascript:void(0)" className="closebtn" onClick={this.props.onClick}>&times;</a>
+                <a href="#">Bare Hands</a>
+                <a href="#">Wargloves</a>
+                <a href="#">Sword</a>
             </div>)
       }
 }
@@ -63,6 +59,7 @@ class Header extends React.Component {
       render() {
         return (
             <div className="Absolver-header">
+                <span className="Absolver-sidebar-open" onClick={this.props.onClick}>&#9776;</span>
                 {this.state.value}
             </div>)
     }
@@ -174,12 +171,25 @@ class Absolver extends React.Component {
         super(props);
         this.state = {
           deckType: 0,
+          sidebar: false,
           deckHistory: [{
-              deckState: [
-                  Array(4).fill("+"),
-                  Array(4).fill("+"),
-                  Array(4).fill("+"),
-                  Array(4).fill("+")
+              barehands: [
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+")
+              ],
+              wargloves: [
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+")
+              ],
+              sword: [
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+")
               ],
             }],
         };
@@ -188,14 +198,18 @@ class Absolver extends React.Component {
     render() {
         return (
             <div className="Absolver-app">
-                <Header></Header>
-                <div className="Absolver-body">
-                    <Sidebar></Sidebar>
-                    <Deckbuilder deckArray={this.state.deckHistory[0].deckState}></Deckbuilder>
+                <Sidebar active={this.state.sidebar} onClick={i => this.toggleSidebar()}></Sidebar>
+                <div style={{opacity: this.state.sidebar ? '50%' : '100%'}}>
+                    <Header onClick={i => this.toggleSidebar()}></Header>
+                    <Deckbuilder deckArray={this.state.deckHistory[0].barehands}></Deckbuilder>
+                    <Footer></Footer>
                 </div>
-                <Footer></Footer>
             </div>
         )
+    }
+
+    toggleSidebar() {
+        this.setState({sidebar: !this.state.sidebar})
     }
 }
 

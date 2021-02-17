@@ -28,6 +28,14 @@ a {
     height: 100%;
 }
 
+.Absolver-app > div{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.5s;
+}
+
 .Absolver-body {
     display: flex;
     flex-grow: 1;
@@ -43,6 +51,8 @@ a {
 
 .Absolver-header > h1 {
     margin: 0px;
+    flex-grow:1;
+    text-align: center;
 }
 
 .Absolver-footer {
@@ -54,8 +64,50 @@ a {
 }
 
 .Absolver-sidebar {
-    display: none;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: azure;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    overflow: hidden;
+    white-space: nowrap;
 }
+
+.Absolver-sidebar-open {
+    font-size:30px;
+    margin-left: 20px;
+}
+
+.Absolver-sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .Absolver-sidebar a:hover {
+    color: #000;
+  }
+  
+  .Absolver-sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .Absolver-sidebar {padding-top: 15px;}
+    .Absolver-sidebar a {font-size: 18px;}
+  }
 
 .Absolver-deckbuilder {
     width: 100%;
@@ -63,6 +115,7 @@ a {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .Absolver-deckrow {
