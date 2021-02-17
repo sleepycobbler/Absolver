@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css';
+import Absolver from './features/absolver/Absolver.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+    <Absolver />
   );
 }
 
