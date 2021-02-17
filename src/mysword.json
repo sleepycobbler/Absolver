@@ -1,0 +1,2205 @@
+[{
+    "name": "Arc Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 79.7,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 246,
+    "stamina": 16.1,
+    "impact": 53.2,
+    "frames": {
+        "startup": 16,
+        "advantage": {
+            "hit": 9,
+            "guard": 2
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Back Thrust",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 75.3,
+    "stats": {
+        "str": "C",
+        "dex": "E",
+        "mob": "none"
+    },
+    "range": 276,
+    "stamina": 16.9,
+    "impact": 69.5,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 9,
+            "guard": 2
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Body Slicing",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 118.4,
+    "stats": {
+        "str": "C",
+        "dex": "E",
+        "mob": "none"
+    },
+    "range": 313,
+    "stamina": 22.2,
+    "impact": 150.0,
+    "frames": {
+        "startup": 23,
+        "advantage": {
+            "hit": 13,
+            "guard": 6
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Buchinmo",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 94.5,
+    "stats": {
+        "str": "E",
+        "dex": "none",
+        "mob": "none"
+    },
+    "range": 284,
+    "stamina": 20.4,
+    "impact": 73.1,
+    "frames": {
+        "startup": 21,
+        "advantage": {
+            "hit": 10,
+            "guard": 2
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Chest Stab",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 45.6,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 261,
+    "stamina": 12.6,
+    "impact": 13.9,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 7,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Circular Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "light",
+    "damage": 49.3,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 276,
+    "stamina": 13.4,
+    "impact": 15.0,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 7,
+            "guard": 5
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Corkscrew Thrust",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 31.4,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "A"
+    },
+    "range": 300,
+    "stamina": 11.7,
+    "impact": 1.0,
+    "frames": {
+        "startup": 11,
+        "advantage": {
+            "hit": 3,
+            "guard": 0
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Dash Slash",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 77.8,
+    "stats": {
+        "str": "D",
+        "dex": "A",
+        "mob": "D"
+    },
+    "range": 344,
+    "stamina": 16.9,
+    "impact": 41.7,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 11,
+            "guard": 2
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Digging Parry Elbow",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 74.8,
+    "stats": {
+        "str": "D",
+        "dex": "E",
+        "mob": "E"
+    },
+    "range": 177,
+    "stamina": 17.8,
+    "impact": 49.8,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 9,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Double Thrust",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 46.4,
+    "stats": {
+        "str": "E",
+        "dex": "D",
+        "mob": "E"
+    },
+    "range": 275,
+    "stamina": 17.5,
+    "impact": 19.7,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 6,
+            "guard": 5
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Drop Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 91.1,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 270,
+    "stamina": 16.9,
+    "impact": 66.1,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 12,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Ducking Spike",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "light",
+    "damage": 45.5,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "A"
+    },
+    "range": 212,
+    "stamina": 15.1,
+    "impact": 16.4,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 4,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Duster Blow",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "light",
+    "damage": 44.0,
+    "stats": {
+        "str": "D",
+        "dex": "A",
+        "mob": "B"
+    },
+    "range": 251,
+    "stamina": 12.6,
+    "impact": 12.3,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 6,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Forward Lean Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 119.0,
+    "stats": {
+        "str": "B",
+        "dex": "A",
+        "mob": "E"
+    },
+    "range": 384,
+    "stamina": 21.3,
+    "impact": 79.8,
+    "frames": {
+        "startup": 22,
+        "advantage": {
+            "hit": 14,
+            "guard": 5
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Front Stab",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 48.6,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 281,
+    "stamina": 13.4,
+    "impact": 18.0,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 6,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Gatotsu",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 70.2,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 399,
+    "stamina": 16.9,
+    "impact": 44.1,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 11,
+            "guard": 14
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Gokai Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 65.3,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 245,
+    "stamina": 14.3,
+    "impact": 36.4,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 8,
+            "guard": 6
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Ground Swell Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 84.7,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "C"
+    },
+    "range": 251,
+    "stamina": 16.9,
+    "impact": 47.5,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 8,
+            "guard": 3
+        }
+    },
+    "height": "low",
+    "hits": "diff"
+}, {
+    "name": "Head Splitter",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 77.6,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "C"
+    },
+    "range": 261,
+    "stamina": 16.1,
+    "impact": 51.0,
+    "frames": {
+        "startup": 16,
+        "advantage": {
+            "hit": 9,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Hook Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 63.4,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "B"
+    },
+    "range": 237,
+    "stamina": 14.3,
+    "impact": 27.5,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 7,
+            "guard": 5
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Inward Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 83.6,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 302,
+    "stamina": 16.9,
+    "impact": 46.6,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 11,
+            "guard": 6
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Keen Crouch",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 65.5,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "B"
+    },
+    "range": 230,
+    "stamina": 19.3,
+    "impact": 41.6,
+    "frames": {
+        "startup": 16,
+        "advantage": {
+            "hit": 8,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Leg Stroke",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "light",
+    "damage": 44.2,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 271,
+    "stamina": 12.6,
+    "impact": 10.0,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 6,
+            "guard": 13
+        }
+    },
+    "height": "low",
+    "hits": "same"
+}, {
+    "name": "Light Swing Slash",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "light",
+    "damage": 34.3,
+    "stats": {
+        "str": "D",
+        "dex": "A",
+        "mob": "A"
+    },
+    "range": 258,
+    "stamina": 11.7,
+    "impact": 1.0,
+    "frames": {
+        "startup": 11,
+        "advantage": {
+            "hit": 4,
+            "guard": 2
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Light Thrust",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 42.8,
+    "stats": {
+        "str": "D",
+        "dex": "E",
+        "mob": "E"
+    },
+    "range": 321,
+    "stamina": 14.3,
+    "impact": 32.7,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 8,
+            "guard": 7
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Limbo Thrust",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 47.6,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "A"
+    },
+    "range": 265,
+    "stamina": 17.2,
+    "impact": 20.6,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 6,
+            "guard": 7
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Mill Slash",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "light",
+    "damage": 49.5,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "A"
+    },
+    "range": 248,
+    "stamina": 17.2,
+    "impact": 22.7,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 6,
+            "guard": 4
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Neck Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "light",
+    "damage": 48.6,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 324,
+    "stamina": 13.4,
+    "impact": 14.4,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 6,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Needle Point",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 52.7,
+    "stats": {
+        "str": "D",
+        "dex": "A",
+        "mob": "B"
+    },
+    "range": 210,
+    "stamina": 12.6,
+    "impact": 21.4,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 7,
+            "guard": 4
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Nose Stab",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 32.3,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "A"
+    },
+    "range": 294,
+    "stamina": 11.7,
+    "impact": 1.0,
+    "frames": {
+        "startup": 11,
+        "advantage": {
+            "hit": 4,
+            "guard": 8
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Obvious Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 130.3,
+    "stats": {
+        "str": "B",
+        "dex": "A",
+        "mob": "E"
+    },
+    "range": 324,
+    "stamina": 21.3,
+    "impact": 111.6,
+    "frames": {
+        "startup": 22,
+        "advantage": {
+            "hit": 14,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "both"
+}, {
+    "name": "One Handed Slash",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "light",
+    "damage": 49.4,
+    "stats": {
+        "str": "D",
+        "dex": "A",
+        "mob": "B"
+    },
+    "range": 253,
+    "stamina": 13.4,
+    "impact": 15.0,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 6,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "DIFF"
+}, {
+    "name": "Overhead Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 93.6,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 293,
+    "stamina": 17.8,
+    "impact": 69.6,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 11,
+            "guard": 4
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Painstaking Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 65.1,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "C"
+    },
+    "range": 288,
+    "stamina": 15.2,
+    "impact": 29.6,
+    "frames": {
+        "startup": 15,
+        "advantage": {
+            "hit": 8,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Parry Pommel Bash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 78.9,
+    "stats": {
+        "str": "D",
+        "dex": "none",
+        "mob": "E"
+    },
+    "range": 260,
+    "stamina": 19.6,
+    "impact": 55.9,
+    "frames": {
+        "startup": 20,
+        "advantage": {
+            "hit": 11,
+            "guard": 2
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Parry Reverse Low Slash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 73.6,
+    "stats": {
+        "str": "D",
+        "dex": "none",
+        "mob": "E"
+    },
+    "range": 315,
+    "stamina": 19.6,
+    "impact": 40.2,
+    "frames": {
+        "startup": 20,
+        "advantage": {
+            "hit": 10,
+            "guard": 1
+        }
+    },
+    "height": "low",
+    "hits": "diff"
+}, {
+    "name": "Parry Shove",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 76.8,
+    "stats": {
+        "str": "D",
+        "dex": "E",
+        "mob": "E"
+    },
+    "range": 219,
+    "stamina": 18.7,
+    "impact": 52.8,
+    "frames": {
+        "startup": 19,
+        "advantage": {
+            "hit": 10,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Parry Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 104.9,
+    "stats": {
+        "str": "D",
+        "dex": "E",
+        "mob": "E"
+    },
+    "range": 244,
+    "stamina": 23.1,
+    "impact": 69.4,
+    "frames": {
+        "startup": 24,
+        "advantage": {
+            "hit": 13,
+            "guard": 13
+        }
+    },
+    "height": "low",
+    "hits": "diff"
+}, {
+    "name": "Poke Thrust",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 38.4,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "A"
+    },
+    "range": 250,
+    "stamina": 11.7,
+    "impact": 5.5,
+    "frames": {
+        "startup": 11,
+        "advantage": {
+            "hit": 3,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Pommel Bash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 95.7,
+    "stats": {
+        "str": "D",
+        "dex": "E",
+        "mob": "none"
+    },
+    "range": 180,
+    "stamina": 17.8,
+    "impact": 121.8,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 10,
+            "guard": 1
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Puropera Cut",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 117.5,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 310,
+    "stamina": 20.4,
+    "impact": 77.8,
+    "frames": {
+        "startup": 21,
+        "advantage": {
+            "hit": 13,
+            "guard": 2
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Ram Thrust",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 37.1,
+    "stats": {
+        "str": "D",
+        "dex": "E",
+        "mob": "E"
+    },
+    "range": 299,
+    "stamina": 13.4,
+    "impact": 25.9,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 7,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Reverse Feet Thrust",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "strong",
+    "damage": 100.3,
+    "stats": {
+        "str": "A",
+        "dex": "C",
+        "mob": "D"
+    },
+    "range": 267,
+    "stamina": 17.8,
+    "impact": 76.6,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 12,
+            "guard": 1
+        }
+    },
+    "height": "low",
+    "hits": "diff"
+}, {
+    "name": "Reverse Hips Slash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 59.1,
+    "stats": {
+        "str": "A",
+        "dex": "D",
+        "mob": "B"
+    },
+    "range": 268,
+    "stamina": 14.3,
+    "impact": 23.9,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 7,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Reverse One Handed Slash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 67.9,
+    "stats": {
+        "str": "A",
+        "dex": "D",
+        "mob": "C"
+    },
+    "range": 246,
+    "stamina": 15.2,
+    "impact": 32.0,
+    "frames": {
+        "startup": 15,
+        "advantage": {
+            "hit": 7,
+            "guard": 1
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Reverse Rising Slash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 72.0,
+    "stats": {
+        "str": "A",
+        "dex": "D",
+        "mob": "C"
+    },
+    "range": 260,
+    "stamina": 15.2,
+    "impact": 44.3,
+    "frames": {
+        "startup": 15,
+        "advantage": {
+            "hit": 9,
+            "guard": 1
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Reverse Rising Thrust",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 90.9,
+    "stats": {
+        "str": "A",
+        "dex": "C",
+        "mob": "D"
+    },
+    "range": 291,
+    "stamina": 17.8,
+    "impact": 66.7,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 10,
+            "guard": 2
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Reverse Sharp Slash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 122.9,
+    "stats": {
+        "str": "A",
+        "dex": "C",
+        "mob": "D"
+    },
+    "range": 313,
+    "stamina": 21.3,
+    "impact": 83.1,
+    "frames": {
+        "startup": 22,
+        "advantage": {
+            "hit": 13,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Reverse Twist Slash",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 55.1,
+    "stats": {
+        "str": "C",
+        "dex": "E",
+        "mob": "E"
+    },
+    "range": 232,
+    "stamina": 14.3,
+    "impact": 45.7,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 8,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Rising Double Hand",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 80.9,
+    "stats": {
+        "str": "D",
+        "dex": "none",
+        "mob": "none"
+    },
+    "range": 235,
+    "stamina": 16.9,
+    "impact": 105.4,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 9,
+            "guard": 6
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Rising Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "light",
+    "damage": 46.7,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 253,
+    "stamina": 12.6,
+    "impact": 15.1,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 7,
+            "guard": 1
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Rising Spin Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 92.2,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "D"
+    },
+    "range": 325,
+    "stamina": 17.8,
+    "impact": 68.1,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 12,
+            "guard": 0
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Seven Star Thrust",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "strong",
+    "damage": 103.8,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "D"
+    },
+    "range": 263,
+    "stamina": 27.7,
+    "impact": 90.2,
+    "frames": {
+        "startup": 22,
+        "advantage": {
+            "hit": 14,
+            "guard": 4
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Shapu Furiko",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 70.4,
+    "stats": {
+        "str": "A",
+        "dex": "D",
+        "mob": "B"
+    },
+    "range": 230,
+    "stamina": 14.3,
+    "impact": 41.7,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 9,
+            "guard": 5
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Shifting Thrust",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 40.4,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 298,
+    "stamina": 12.6,
+    "impact": 8.5,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 5,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Sickle Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 78.6,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 254,
+    "stamina": 16.1,
+    "impact": 41.7,
+    "frames": {
+        "startup": 16,
+        "advantage": {
+            "hit": 9,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Side Thrust",
+    "style": "kahlt",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "medium",
+    "damage": 57.1,
+    "stats": {
+        "str": "A",
+        "dex": "D",
+        "mob": "B"
+    },
+    "range": 241,
+    "stamina": 13.4,
+    "impact": 26.9,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 8,
+            "guard": -1
+        }
+    },
+    "height": "high",
+    "hits": "different"
+}, {
+    "name": "Side Wind Thrust",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "thrust",
+    "power": "strong",
+    "damage": 98.1,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "D"
+    },
+    "range": 252,
+    "stamina": 26.6,
+    "impact": 83.0,
+    "frames": {
+        "startup": 21,
+        "advantage": {
+            "hit": 13,
+            "guard": 4
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Slip Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 63.5,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 278,
+    "stamina": 15.2,
+    "impact": 28.3,
+    "frames": {
+        "startup": 15,
+        "advantage": {
+            "hit": 7,
+            "guard": -1
+        }
+    },
+    "height": "low",
+    "hits": "same"
+}, {
+    "name": "Spiral Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "strong",
+    "damage": 102.1,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "D"
+    },
+    "range": 232,
+    "stamina": 17.8,
+    "impact": 62.8,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 11,
+            "guard": 5
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Spoon Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 75.1,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 320,
+    "stamina": 16.9,
+    "impact": 49.3,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 9,
+            "guard": 5
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Stumble Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 108.9,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 372,
+    "stamina": 20.4,
+    "impact": 88.3,
+    "frames": {
+        "startup": 21,
+        "advantage": {
+            "hit": 13,
+            "guard": 3
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Swirl Slash",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 105.1,
+    "stats": {
+        "str": "E",
+        "dex": "C",
+        "mob": "none"
+    },
+    "range": 294,
+    "stamina": 20.4,
+    "impact": 134.3,
+    "frames": {
+        "startup": 21,
+        "advantage": {
+            "hit": 13,
+            "guard": 4
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Tei-nami",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "thrust",
+    "power": "light",
+    "damage": 49.8,
+    "stats": {
+        "str": "E",
+        "dex": "C",
+        "mob": "E"
+    },
+    "range": 209,
+    "stamina": 16.3,
+    "impact": 22.1,
+    "frames": {
+        "startup": 12,
+        "advantage": {
+            "hit": 6,
+            "guard": 4
+        }
+    },
+    "height": "low",
+    "hits": "diff"
+}, {
+    "name": "Tendon Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 69.2,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 300,
+    "stamina": 16.1,
+    "impact": 33.8,
+    "frames": {
+        "startup": 16,
+        "advantage": {
+            "hit": 8,
+            "guard": 4
+        }
+    },
+    "height": "low",
+    "hits": "diff"
+}, {
+    "name": "Thigh Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 52.6,
+    "stats": {
+        "str": "C",
+        "dex": "C",
+        "mob": "B"
+    },
+    "range": 230,
+    "stamina": 13.4,
+    "impact": 17.7,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 6,
+            "guard": 5
+        }
+    },
+    "height": "low",
+    "hits": "same"
+}, {
+    "name": "Thunder Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 131.4,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "E"
+    },
+    "range": 336,
+    "stamina": 22.2,
+    "impact": 113.6,
+    "frames": {
+        "startup": 23,
+        "advantage": {
+            "hit": 14,
+            "guard": 8
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Toreador Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 50.3,
+    "stats": {
+        "str": "E",
+        "dex": "E",
+        "mob": "A"
+    },
+    "range": 241,
+    "stamina": 18.6,
+    "impact": 24.9,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 6,
+            "guard": 15
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Twist Hips Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 115.4,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "D"
+    },
+    "range": 262,
+    "stamina": 19.6,
+    "impact": 94.2,
+    "frames": {
+        "startup": 20,
+        "advantage": {
+            "hit": 13,
+            "guard": 0
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Typhoon Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 54.5,
+    "stats": {
+        "str": "E",
+        "dex": "D",
+        "mob": "E"
+    },
+    "range": 238,
+    "stamina": 17.5,
+    "impact": 22.5,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 7,
+            "guard": 3
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Up Slash",
+    "style": "faejin",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_RIGHT": "BACK_LEFT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 75.7,
+    "stats": {
+        "str": "B",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 182,
+    "stamina": 14.3,
+    "impact": 47.3,
+    "frames": {
+        "startup": 14,
+        "advantage": {
+            "hit": 9,
+            "guard": 1
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}, {
+    "name": "Vertical Slash",
+    "style": "forsaken",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "FRONT_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "strong",
+    "damage": 86.8,
+    "stats": {
+        "str": "B",
+        "dex": "C",
+        "mob": "D"
+    },
+    "range": 258,
+    "stamina": 16.9,
+    "impact": 61.6,
+    "frames": {
+        "startup": 17,
+        "advantage": {
+            "hit": 10,
+            "guard": 5
+        }
+    },
+    "height": "mid",
+    "hits": "diff"
+}, {
+    "name": "Whirl Slash",
+    "style": "windfall",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "FRONT_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 73.5,
+    "stats": {
+        "str": "none",
+        "dex": "D",
+        "mob": "C"
+    },
+    "range": 284,
+    "stamina": 19.6,
+    "impact": 40.2,
+    "frames": {
+        "startup": 18,
+        "advantage": {
+            "hit": 10,
+            "guard": 5
+        }
+    },
+    "height": "high",
+    "hits": "same"
+}, {
+    "name": "Wide Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 66.1,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 281,
+    "stamina": 15.2,
+    "impact": 30.5,
+    "frames": {
+        "startup": 15,
+        "advantage": {
+            "hit": 8,
+            "guard": 0
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Woosh Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_LEFT": "BACK_RIGHT"
+        }
+    },
+    "type": "horizontal",
+    "power": "medium",
+    "damage": 55.2,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "B"
+    },
+    "range": 255,
+    "stamina": 13.4,
+    "impact": 19.9,
+    "frames": {
+        "startup": 13,
+        "advantage": {
+            "hit": 7,
+            "guard": 0
+        }
+    },
+    "height": "high",
+    "hits": "diff"
+}, {
+    "name": "Wrist Roll Slash",
+    "style": "stagger",
+    "stance": {
+        "barehands": false,
+        "sword": {
+            "BACK_RIGHT": "FRONT_RIGHT"
+        }
+    },
+    "type": "vertical",
+    "power": "medium",
+    "damage": 71.3,
+    "stats": {
+        "str": "C",
+        "dex": "B",
+        "mob": "C"
+    },
+    "range": 265,
+    "stamina": 15.2,
+    "impact": 43.5,
+    "frames": {
+        "startup": 15,
+        "advantage": {
+            "hit": 9,
+            "guard": 6
+        }
+    },
+    "height": "mid",
+    "hits": "same"
+}]
