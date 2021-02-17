@@ -3,24 +3,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class Sidebar extends React.Component {
-      render() {
-        return (
-            <div style={{width: this.props.active ? "200px" : "0px"}} className="Absolver-sidebar">
-                <a href="javascript:void(0)" className="closebtn" onClick={this.props.onClick}>&times;</a>
-                <a href="#">Bare Hands</a>
-                <a href="#">Wargloves</a>
-                <a href="#">Sword</a>
-            </div>)
-      }
+function Sidebar(props) {
+    return (
+        <div style={{width: props.active ? "200px" : "0px"}} className="Absolver-sidebar">
+            <a href="javascript:void(0)" className="closebtn" onClick={props.onClick}>&times;</a>
+            <a href="#">Bare Hands</a>
+            <a href="#">Wargloves</a>
+            <a href="#">Sword</a>
+        </div>)
 }
 
-class Footer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: (
-            <React.Fragment>
+function Footer(props) {
+    return (
+        <div className="Absolver-footer">
             <a href="https://twitter.com/maxistired">
                 <p>
                     My Twitter
@@ -36,88 +31,45 @@ class Footer extends React.Component {
                     Absolver Website
                 </p>
             </a>
-            </React.Fragment>),
-        };
-      }
-
-    render() {
-        return (
-            <div className="Absolver-footer">
-                {this.state.value}
-            </div>)
-    }
+        </div>)
 }
 
-class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: <h1>Absolver Deckbuilder</h1>,
-        };
-      }
-
-      render() {
-        return (
-            <div className="Absolver-header">
-                <span className="Absolver-sidebar-open" onClick={this.props.onClick}>&#9776;</span>
-                {this.state.value}
-            </div>)
-    }
+function Header(props) {
+    return (
+        <div className="Absolver-header">
+            <span className="Absolver-sidebar-open" onClick={props.onClick}>&#9776;</span>
+            <h1>Absolver Deckbuilder</h1>
+        </div>)
 }
 
 
-class Move extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.value,
-        }
+function Move(props) {
+    if(typeof(props.value) === "string") {
+        return (<div className="Absolver-move-plus">{props.value}</div>);
     }
-    render() {
-        if(typeof(this.props.value) === "string") {
-            return (<div className="Absolver-move-plus">{this.props.value}</div>);
-        }
-        return (<div className="Absolver-move">{this.props.value}</div>);
-    }
+    return (<div className="Absolver-move">{props.value}</div>);
 }
 
-class Stance extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.value,
-        }
-    }
-    render() {
-        return (
-            <div className="Absolver-stance">
-                <div className={typeof(this.props.value) === "number" ? "Absolver-stance-square-active" : "Absolver-stance-square-inactive"}>
-                    <div className={"Absolver-stance-pointer-" + String(this.props.value)}>
-                    </div>
+function Stance(props) {
+    return (
+        <div className="Absolver-stance">
+            <div className={typeof(props.value) === "number" ? "Absolver-stance-square-active" : "Absolver-stance-square-inactive"}>
+                <div className={"Absolver-stance-pointer-" + String(props.value)}>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
-class Alt extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.value,
-            rowState: this.props.rowState,
-        }
-    }
-        render() {
-            return (
-                <div className="Absolver-altmove">
-                <Stance value={this.props.value}></Stance>
-                <Move value={this.props.rowState}></Move>
-                <Stance></Stance>
-                </div>
-            );
-        }
-    }
+function Alt(props) {
+    return (
+        <div className="Absolver-altmove">
+            <Stance value={props.value}></Stance>
+            <Move value={props.rowState}></Move>
+            <Stance></Stance>
+        </div>
+    );
+}
 
 
 class Deckrow extends React.Component {
@@ -147,21 +99,54 @@ class Deckrow extends React.Component {
     }
 }
 
-class Deckbuilder extends React.Component {
+function Deckbuilder(props) {
+    return (
+        <div className="Absolver-deckbuilder">
+            <Deckrow value={0} rowState={props.deckArray[0]}></Deckrow>
+            <Deckrow value={1} rowState={props.deckArray[1]}></Deckrow>
+            <Deckrow value={2} rowState={props.deckArray[2]}></Deckrow>
+            <Deckrow value={3} rowState={props.deckArray[3]}></Deckrow>
+        </div>);
+}
+
+class Movelist extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            deckArray: this.props.deckArray
+
+        };
+      }
+
+      render() {
+          return (
+            <div>
+                <navbar></navbar>
+                <moves></moves>
+            </div>
+          )
+      }
+}
+
+class Movechooser extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            deckArray: this.props.deckArray,
+            rowtarget: this.props.rowtarget,
+            isCombo : false
         };
       }
 
       render() {
         return (
-            <div className="Absolver-deckbuilder">
-                <Deckrow value={0} rowState={this.props.deckArray[0]}></Deckrow>
-                <Deckrow value={1} rowState={this.props.deckArray[1]}></Deckrow>
-                <Deckrow value={2} rowState={this.props.deckArray[2]}></Deckrow>
-                <Deckrow value={3} rowState={this.props.deckArray[3]}></Deckrow>
+            <div className="Absolver-movechooser">
+                <Stance value={this.state.rowtarget}></Stance>
+                <Move value={this.props.rowState[0]}></Move>
+                <Stance></Stance>
+                <Move value={this.props.rowState[1]}></Move>
+                <Stance></Stance>
+                <Move value={this.props.rowState[2]}></Move>
+                <Movelist></Movelist>
             </div>) 
     }
 }
