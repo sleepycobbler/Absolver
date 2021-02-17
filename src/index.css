@@ -229,10 +229,26 @@ a {
 .Absolver-move {
     width: 104px;
     height: 104px;
-    background-size: contain;
-    background-position-y: 10px;
     background-color: rgba(0, 0, 0, 0.55);
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.Absolver-move > img{
+    width: 104px;
+    position:absolute;
+}
+
+.Absolver-move > div{
+    position:absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    margin: 5px;
 }
 
 .Absolver-move-plus {

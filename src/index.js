@@ -45,10 +45,17 @@ function Header(props) {
 
 
 function Move(props) {
-    if(typeof(props.value) === "string") {
+    if(props.value === "+") {
         return (<div className="Absolver-move-plus">{props.value}</div>);
     }
-    return (<div className="Absolver-move">{props.value}</div>);
+    var moveData = data.getBareHands().find(e => e['name'] === props.value)
+    return (
+        <div className="Absolver-move">
+            <img 
+                src={"https://raw.githubusercontent.com/sleepycobbler/Absolver/main/src/images/" + props.value.toLowerCase().replaceAll(' ', '-') + ".png"}>
+            </img>
+            <div>{moveData["frames"]['startup'] + 'f'}</div>
+        </div>);
 }
 
 function Stance(props) {
@@ -115,8 +122,6 @@ class Movelist extends React.Component {
       render() {
           return (
             <div>
-                <navbar></navbar>
-                <moves></moves>
             </div>
           )
       }
@@ -144,7 +149,7 @@ class Movechooser extends React.Component {
         if (rowtarget < 3) {
             return <Combo value={rowtarget} rowState={this.state.deckArray[this.state.rowHighlight]}></Combo>
         }
-        return <Alt value={rowtarget} rowState={this.state.deckArray[this.state.rowHighlight]}></Alt>
+        return <Alt value={this.state.rowHighlight} rowState={this.state.deckArray[this.state.rowHighlight][rowtarget]}></Alt>
     }
 }
 
@@ -155,20 +160,21 @@ class Absolver extends React.Component {
           deckType: 0,
           sidebar: false,
           rowHighlight: 0,
+          pickingMoves: false,
           deckHistory: [{
-              barehands: [
+              'barehands': [
+                ["360 Tornado Kick","+","+","+"],
+                Array(4).fill("+"),
+                Array(4).fill("+"),
+                Array(4).fill("+")
+              ],
+              'wargloves': [
                 Array(4).fill("+"),
                 Array(4).fill("+"),
                 Array(4).fill("+"),
                 Array(4).fill("+")
               ],
-              wargloves: [
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+")
-              ],
-              sword: [
+              'sword': [
                 Array(4).fill("+"),
                 Array(4).fill("+"),
                 Array(4).fill("+"),
@@ -186,7 +192,7 @@ class Absolver extends React.Component {
                 <Sidebar active={this.state.sidebar} onClick={i => this.toggleSidebar()}></Sidebar>
                 <div style={{opacity: this.state.sidebar ? '50%' : '100%'}}>
                     <Header onClick={i => this.toggleSidebar()}></Header>
-                    <Deckbuilder deckArray={this.state.deckHistory[0].barehands}></Deckbuilder>
+                    {this.returnMainScreen()}
                     <Footer></Footer>
                 </div>
             </div>
@@ -195,6 +201,13 @@ class Absolver extends React.Component {
 
     toggleSidebar() {
         this.setState({sidebar: !this.state.sidebar})
+    }
+
+    returnMainScreen() {
+        if (this.state.pickingMoves) {
+            return <Movechooser deckArray={this.state.deckHistory[0]['barehands']} rowHighlight={0} rowtarget={0} ></Movechooser>
+        }
+        return <Deckbuilder deckArray={this.state.deckHistory[0]['barehands']}></Deckbuilder>;
     }
 }
 
@@ -207,6 +220,6 @@ ReactDOM.render(
 
 
 // If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls. <Deckbuilder deckArray={this.state.deckHistory[0].barehands}></Deckbuilder>
+// unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
