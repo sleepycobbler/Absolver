@@ -274,14 +274,6 @@ a {
   color: white;
 }
 
-.Absolver-combo > div {
-  
-}
-
-.Absolver-altmove > div {
-      
-}
-
 @media only screen and (max-width: 600px) {
   .Absolver-combo {
       display: flex;
