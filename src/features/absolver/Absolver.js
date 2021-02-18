@@ -32,9 +32,28 @@ function Absolver(){
         const dispatch = useDispatch();
 
         function changeView(moveName, moveRow, moveColumn) {
-          setSelectedMove(moveName);
-          setRow(moveRow);
-          setColumn(moveColumn);
+          if (row !== -1 && column !== -1 && row !== moveRow && column !== moveColumn) {
+            setSelectedMove(moveName);
+            setRow(moveRow);
+            setColumn(moveColumn);
+          }
+          else {
+            setSelectedMove(moveName);
+            setRow(moveRow);
+            setColumn(moveColumn);
+          }
+        }
+
+        function rowClick(moveName, targetRow, targetColumn, currDeckType) {
+          var myDeckType = deckType;
+          let newDecks = {[deckType]: ([
+            [...currentDecks[deckType][0]],
+            [...currentDecks[deckType][1]],
+            [...currentDecks[deckType][2]],
+            [...currentDecks[deckType][3]]
+          ])};
+          newDecks[deckType][targetRow][targetColumn] = moveName;
+          dispatch(updateDecks(newDecks));
         }
 
         return (
@@ -47,7 +66,7 @@ function Absolver(){
                 <div style={{opacity: isSidebarOpen ? '50%' : '100%'}}>
                     <Header onClick={i => toggleSidebar(!isSidebarOpen)}></Header>
                     {row > -1 && column > -1 ? 
-                    <Movechooser deckArray={currentDecks[deckType]} row={row} column={column} moveClick={changeView} moveName={selectedMove} deckType={deckType}></Movechooser> :
+                    <Movechooser deckArray={currentDecks[deckType]} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={selectedMove} deckType={deckType}></Movechooser> :
                     <Deckbuilder deckArray={currentDecks[deckType]} moveClick={changeView}></Deckbuilder>}
                     <Footer></Footer>
                 </div>

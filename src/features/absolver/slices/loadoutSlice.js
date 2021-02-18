@@ -51,16 +51,7 @@ export const loadoutSlice = createSlice({
       }
     },
     updateDecks: (state, action) => {
-      var payload = action.payload;
-      var currentDeck = state.deckHistory[state.deckHistory.length - 1];
-      var changedDecks = payload.keys();
-      changedDecks.foreach(key => {
-          if (currentDeck.keys().includes(key)) {
-            currentDeck[key] = changedDecks[key];
-          }
-        }
-      )
-      state.deckHistory = state.deckHistory.push(currentDeck);      
+      state.deckHistory.push(action.payload);      
     },
     undoChange: state => {
       state.deckHistory = state.deckHistory.pop();

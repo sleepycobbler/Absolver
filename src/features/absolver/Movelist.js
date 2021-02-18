@@ -21,11 +21,21 @@ function Movelist(props) {
     "BACK_LEFT": 3
   }
 
-  var moveData = data.getBareHands().filter(x => Object.keys(x['stance'][props.deckType]).includes(numberToStance[props.row]));
+  if (props.column === 3) {
+    var moveData = data.getBareHands().filter(x => Object.keys(x['stance'][props.deckType]).includes(numberToStance[props.row]));
+    for (const checkMove of moveData) {
+      const [key, value] = Object.entries(checkMove['stance'][props.deckType])[0];
+      if (key === value) {
+        moveData = moveData.filter(x => x['name'] !== checkMove['name']);
+      }
+    }
+  }
+  else {
+    var moveData = data.getBareHands().filter(x => Object.keys(x['stance'][props.deckType]).includes(numberToStance[props.row]));
+  }
 
   const stances = moveData.map(move => {
     var myKeys = Object.keys(move['stance'][props.deckType]);
-    console.log(myKeys);
     if (myKeys.length == 1) {
         return (
           <React.Fragment>
@@ -43,9 +53,8 @@ function Movelist(props) {
     })
   const moves = moveData.map(move => {
     var myKeys = Object.keys(move['stance'][props.deckType]);
-    console.log(move);
     return (
-      <tr key={move['name']}>
+      <tr key={move['name']} onClick={() => props.rowClick(move['name'], props.row, props.column, props.deckType)}>
         <td>{move['name']}</td>
         <td>{move['style']}</td>
         <td>{move['type']}</td>
