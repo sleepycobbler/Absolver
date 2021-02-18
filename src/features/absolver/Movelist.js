@@ -1,19 +1,13 @@
-import React from 'react';
+import Movebar from './Movebar';
+import Movedisplay from './Movedisplay';
 
-class Movelist extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            
-        };
-      }
-
-      render() {
-          return (
-            <div>
-            </div>
-          )
-      }
+function Movelist(props) {
+  return (
+    <div className="Absolver-movelist">
+      <Movebar />
+      <Movedisplay />
+    </div>
+  )
 }
 
 export default Movelist;

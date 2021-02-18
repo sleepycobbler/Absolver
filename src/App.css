@@ -90,6 +90,7 @@ a {
   color: #818181;
   display: block;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .Absolver-sidebar a:hover {
@@ -125,6 +126,14 @@ a {
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+}
+
+.Absolver-movelist {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  width: 100%;
+  background-color: bisque;
 }
 
 .Absolver-deckrow {
