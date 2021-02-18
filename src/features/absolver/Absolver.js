@@ -47,7 +47,7 @@ function Absolver(){
                 <div style={{opacity: isSidebarOpen ? '50%' : '100%'}}>
                     <Header onClick={i => toggleSidebar(!isSidebarOpen)}></Header>
                     {row > -1 && column > -1 ? 
-                    <Movechooser deckArray={currentDecks[deckType]} row={row} column={column} moveClick={changeView} moveName={selectedMove}></Movechooser> :
+                    <Movechooser deckArray={currentDecks[deckType]} row={row} column={column} moveClick={changeView} moveName={selectedMove} deckType={deckType}></Movechooser> :
                     <Deckbuilder deckArray={currentDecks[deckType]} moveClick={changeView}></Deckbuilder>}
                     <Footer></Footer>
                 </div>

@@ -133,7 +133,62 @@ a {
   flex-flow: column nowrap;
   flex-grow: 1;
   width: 100%;
-  background-color: bisque;
+  background-color:white;
+  align-items: center;
+}
+
+.Absolver-movebar {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 90%;
+  height: 30px;
+  margin-top: 10px;
+  background-color:deepskyblue;
+  align-items: center;
+}
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.filter, .sort {
+  margin: 10px;
+}
+
+.searchBar {
+  margin-left: auto;
+  height: 30px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.searchBar > input {
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  border: 0px;
+  height: 30px;
+  width: 100%;
 }
 
 .Absolver-deckrow {
