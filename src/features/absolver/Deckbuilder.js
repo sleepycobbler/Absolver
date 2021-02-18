@@ -4,10 +4,10 @@ import Deckrow from './Deckrow.js';
 function Deckbuilder(props) {
     return (
         <div className="Absolver-deckbuilder">
-            <Deckrow value={0} rowState={props.deckArray[0]}></Deckrow>
-            <Deckrow value={1} rowState={props.deckArray[1]}></Deckrow>
-            <Deckrow value={2} rowState={props.deckArray[2]}></Deckrow>
-            <Deckrow value={3} rowState={props.deckArray[3]}></Deckrow>
+            <Deckrow row={0} rowState={props.deckArray[0]} moveClick={props.moveClick}></Deckrow>
+            <Deckrow row={1} rowState={props.deckArray[1]} moveClick={props.moveClick}></Deckrow>
+            <Deckrow row={2} rowState={props.deckArray[2]} moveClick={props.moveClick}></Deckrow>
+            <Deckrow row={3} rowState={props.deckArray[3]} moveClick={props.moveClick}></Deckrow>
         </div>);
 }
 

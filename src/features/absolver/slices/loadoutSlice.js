@@ -14,18 +14,19 @@ export const loadoutSlice = createSlice({
           Array(4).fill("+")
         ],
         'wargloves': [
-          Array(4).fill("+"),
+          Array(4).fill("$"),
           Array(4).fill("+"),
           Array(4).fill("+"),
           Array(4).fill("+")
         ],
         'sword': [
-          Array(4).fill("+"),
+          Array(4).fill("&"),
           Array(4).fill("+"),
           Array(4).fill("+"),
           Array(4).fill("+")
         ]
-  }],
+  },
+  ]},
   reducers: {
     switchDeckType: (state, action) => {
       var payload = action.payload;

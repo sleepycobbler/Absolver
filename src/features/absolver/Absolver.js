@@ -1,67 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Deckbuilder from './Deckbuilder.js';
 import Movechooser from './Movechooser.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Sidebar from './Sidebar.js';
 import * as data from './Moves.js';
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  switchDeckType, 
+  setPower, 
+  setStyle, 
+  updateDecks, 
+  undoChange,
+  selectStyle,
+  selectDeckType,
+  selectPowers,
+  getDeckHistory,
+  getCurrentDecks
+} from './slices/loadoutSlice.js'
 
-class Absolver extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          deckType: 0,
-          isSidebarOpen: false,
-          rowHighlight: 0,
-          pickingMoves: false,
-          deckHistory: [{
-              'barehands': [
-                ["360 Tornado Kick","+","+","+"],
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+")
-              ],
-              'wargloves': [
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+")
-              ],
-              'sword': [
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+"),
-                Array(4).fill("+")
-              ],
-            }],
-        };
-      }
-
-    render() {
+function Absolver(){
         var bh_moves = data.getBareHands();
         var sword_moves = data.getSword();
+        var decksHistory = useSelector(getDeckHistory);
+        var currentDecks = decksHistory[decksHistory.length - 1];
+        const [row, setRow] = useState(-1);
+        const [column, setColumn] = useState(-1);
+        const [isSidebarOpen, toggleSidebar] = useState(false);
+        const [deckType, setDeckType] = useState("barehands");
+        const [selectedMove, setSelectedMove] = useState("none");
+        const dispatch = useDispatch();
+
+        function changeView(moveName, moveRow, moveColumn) {
+          setSelectedMove(moveName);
+          setRow(moveRow);
+          setColumn(moveColumn);
+        }
+
         return (
             <div className="Absolver-app">
-                <Sidebar active={this.state.isSidebarOpen} onClick={i => this.toggleSidebar()}></Sidebar>
-                <div style={{opacity: this.state.isSidebarOpen ? '50%' : '100%'}}>
-                    <Header onClick={i => this.toggleSidebar()}></Header>
-                    {this.returnMainScreen()}
+                <Sidebar 
+                  active={isSidebarOpen} 
+                  onClick={i => toggleSidebar(!isSidebarOpen)} 
+                  onDeckChange={setDeckType}>
+                </Sidebar>
+                <div style={{opacity: isSidebarOpen ? '50%' : '100%'}}>
+                    <Header onClick={i => toggleSidebar(!isSidebarOpen)}></Header>
+                    {row > -1 && column > -1 ? 
+                    <Movechooser deckArray={currentDecks[deckType]} row={row} column={column} moveClick={changeView} moveName={selectedMove}></Movechooser> :
+                    <Deckbuilder deckArray={currentDecks[deckType]} moveClick={changeView}></Deckbuilder>}
                     <Footer></Footer>
                 </div>
             </div>
-        )
-    }
-
-    toggleSidebar() {
-        this.setState({isSidebarOpen: !this.state.sidebar})
-    }
-
-    returnMainScreen() {
-        if (this.state.pickingMoves) {
-            return <Movechooser deckArray={this.state.deckHistory[0]['barehands']} rowHighlight={0} rowtarget={0} ></Movechooser>
-        }
-        return <Deckbuilder deckArray={this.state.deckHistory[0]['barehands']}></Deckbuilder>;
-    }
-}
-
+        );
+  }
 export default Absolver;

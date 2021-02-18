@@ -4,8 +4,8 @@ import Alt from './Alt';
 function Deckrow(props) {
     return (
         <div className="Absolver-deckrow">
-        <Combo value={props.value} rowState={props.rowState}></Combo>
-        <Alt value={props.value} rowState={props.rowState[3]}></Alt>
+        <Combo row={props.row} rowState={props.rowState} moveClick={props.moveClick}></Combo>
+        <Alt row={props.row} moveName={props.rowState[3]} moveClick={props.moveClick}></Alt>
         </div>
     );
 }
