@@ -2,6 +2,8 @@ import React from 'react';
 import Deckrow from './Deckrow.js';
 
 function Deckbuilder(props) {
+    console.log(props.deckArray);
+
     return (
         <div className="Absolver-deckbuilder">
             <Deckrow row={0} rowState={props.deckArray[0]} moveClick={props.moveClick}></Deckrow>

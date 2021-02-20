@@ -2,6 +2,7 @@ import Stance from './Stance.js';
 import Move from './Move.js';
 
 function Combo(props) {
+    console.log("This is combo" + props.rowState);
     return (
     <div className="Absolver-combo">
         <Stance dir={props.row}></Stance>

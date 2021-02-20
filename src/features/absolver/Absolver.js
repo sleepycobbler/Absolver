@@ -7,67 +7,109 @@ import Sidebar from './Sidebar.js';
 import * as data from './Moves.js';
 import { useSelector, useDispatch } from 'react-redux'
 import {
-  switchDeckType, 
-  setPower, 
+  setTargetDeckType, 
+  setPowers, 
   setStyle, 
-  updateDecks, 
-  undoChange,
+  updateBarehandsDeck, 
+  updateWarglovesDeck, 
+  updateSwordDeck, 
+  setHoveredMove,
+  setActiveMove, 
+  setSidebar, 
+  toggleSidebar, 
+  setTargetRow, 
+  setTargetColumn,
   selectStyle,
-  selectDeckType,
+  selectTargetDeckType,
   selectPowers,
-  getDeckHistory,
-  getCurrentDecks
+  selectBarehandsDeck,
+  selectWarglovesDeck,
+  selectSwordDeck,
+  selectStanceDiamonds,
+  selectSidebarState,
+  selectHoveredMove,
+  selectActiveMove,
+  selectBarehandMoveData,
+  selectSwordMoveData,
+  selectTargetRow,
+  selectTargetColumn
 } from './slices/loadoutSlice.js'
 
-function Absolver(){
-        var bh_moves = data.getBareHands();
-        var sword_moves = data.getSword();
-        var decksHistory = useSelector(getDeckHistory);
-        var currentDecks = decksHistory[decksHistory.length - 1];
-        const [row, setRow] = useState(-1);
-        const [column, setColumn] = useState(-1);
-        const [isSidebarOpen, toggleSidebar] = useState(false);
-        const [deckType, setDeckType] = useState("barehands");
-        const [selectedMove, setSelectedMove] = useState("none");
+export function Absolver(){
+        var row = useSelector(selectTargetRow);
+        var column = useSelector(selectTargetColumn);
+        var powers = useSelector(selectPowers);
+        var style = useSelector(selectStyle);
+        var barehandsDeck = useSelector(selectBarehandsDeck);
+        var warglovesDeck = useSelector(selectWarglovesDeck);
+        var swordDeck = useSelector(selectSwordDeck);
+        var hoveredMove = useSelector(selectHoveredMove);
+        var activeMove = useSelector(selectActiveMove);
+        var sidebarIsOpen = useSelector(selectSidebarState);
+        var targetDeckType = useSelector(selectTargetDeckType);
+        var stanceDiamonds = useSelector(selectStanceDiamonds);
+        var barehandsMoves = useSelector(selectBarehandMoveData);
+        var swordMoves = useSelector(selectSwordMoveData);
         const dispatch = useDispatch();
 
+        if (targetDeckType === 'barehands') {
+          console.log(barehandsDeck)
+          var currentDeck = barehandsDeck;
+        }
+        else if (targetDeckType === 'wargloves') {
+          console.log(warglovesDeck)
+          var currentDeck = warglovesDeck;
+        }
+        else if (targetDeckType === 'sword') {
+          var currentDeck = swordDeck;
+        }
+
         function changeView(moveName, moveRow, moveColumn) {
-          if (row !== -1 && column !== -1 && row !== moveRow && column !== moveColumn) {
-            setSelectedMove(moveName);
-            setRow(moveRow);
-            setColumn(moveColumn);
+          if (row === -1 && column === -1 && row !== moveRow && column !== moveColumn) {
+            dispatch(setActiveMove(moveName));
+            dispatch(setTargetRow(moveRow));
+            dispatch(setTargetColumn(moveColumn));
           }
           else {
-            setSelectedMove(moveName);
-            setRow(moveRow);
-            setColumn(moveColumn);
+            dispatch(setActiveMove(moveName));
+            dispatch(setTargetRow(moveRow));
+            dispatch(setTargetColumn(moveColumn));
           }
         }
 
-        function rowClick(moveName, targetRow, targetColumn, currDeckType) {
-          var myDeckType = deckType;
-          let newDecks = {[deckType]: ([
-            [...currentDecks[deckType][0]],
-            [...currentDecks[deckType][1]],
-            [...currentDecks[deckType][2]],
-            [...currentDecks[deckType][3]]
-          ])};
-          newDecks[deckType][targetRow][targetColumn] = moveName;
-          dispatch(updateDecks(newDecks));
+        function rowClick(moveName) {
+          if (targetDeckType === 'barehands') {
+            dispatch(updateBarehandsDeck(moveName));
+          }
+          else if (targetDeckType === 'wargloves') {
+            dispatch(updateWarglovesDeck(moveName));
+          }
+          else if (targetDeckType === 'sword') {
+            dispatch(updateSwordDeck(moveName));
+          }
         }
 
+        function changeDeckType(deckType) {
+          console.log("This is changeDeckType: " + deckType);
+          dispatch(setTargetDeckType(deckType));
+        }
+
+        function sidebarToggle() {
+          dispatch(toggleSidebar());
+        }
+        console.log(targetDeckType);
         return (
             <div className="Absolver-app">
                 <Sidebar 
-                  active={isSidebarOpen} 
-                  onClick={i => toggleSidebar(!isSidebarOpen)} 
-                  onDeckChange={setDeckType}>
+                  active={sidebarIsOpen} 
+                  onClick={sidebarToggle} 
+                  deckChange={changeDeckType}>
                 </Sidebar>
-                <div style={{opacity: isSidebarOpen ? '50%' : '100%'}}>
-                    <Header onClick={i => toggleSidebar(!isSidebarOpen)}></Header>
+                <div style={{opacity: sidebarIsOpen ? '50%' : '100%'}}>
+                    <Header onClick={sidebarToggle}></Header>
                     {row > -1 && column > -1 ? 
-                    <Movechooser deckArray={currentDecks[deckType]} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={selectedMove} deckType={deckType}></Movechooser> :
-                    <Deckbuilder deckArray={currentDecks[deckType]} moveClick={changeView}></Deckbuilder>}
+                    <Movechooser deckArray={currentDeck} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={activeMove} deckType={targetDeckType}></Movechooser> :
+                    <Deckbuilder deckArray={currentDeck} moveClick={changeView}></Deckbuilder>}
                     <Footer></Footer>
                 </div>
             </div>
