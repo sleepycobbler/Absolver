@@ -1,5 +1,4 @@
 function Sidebar(props) {
-    console.log(props.deckChange);
     return (
         <div style={{width: props.active ? "200px" : "0px"}} className="Absolver-sidebar">
             <a className="closebtn" onClick={() => props.onClick()}>&times;</a>

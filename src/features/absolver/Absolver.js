@@ -52,17 +52,34 @@ export function Absolver(){
         var swordMoves = useSelector(selectSwordMoveData);
         const dispatch = useDispatch();
 
+        var num2Stan = {
+          0: "FRONT_RIGHT",
+          1: "FRONT_LEFT",
+          2: "BACK_RIGHT",
+          3: "BACK_LEFT"
+        }
+      
+        var stan2Num = {
+          "FRONT_RIGHT": 0,
+          "FRONT_LEFT": 1,
+          "BACK_RIGHT": 2,
+          "BACK_LEFT": 3
+        }
+
         if (targetDeckType === 'barehands') {
-          console.log(barehandsDeck)
           var currentDeck = barehandsDeck;
+          var currentMoveSet = barehandsMoves;
         }
         else if (targetDeckType === 'wargloves') {
-          console.log(warglovesDeck)
           var currentDeck = warglovesDeck;
+          var currentMoveSet = barehandsMoves;
         }
         else if (targetDeckType === 'sword') {
           var currentDeck = swordDeck;
+          var currentMoveSet = swordMoves;
         }
+
+        var currentTargetDeckType = (targetDeckType ==='sword' ?  "sword" : 'barehands');     
 
         function changeView(moveName, moveRow, moveColumn) {
           if (row === -1 && column === -1 && row !== moveRow && column !== moveColumn) {
@@ -90,14 +107,20 @@ export function Absolver(){
         }
 
         function changeDeckType(deckType) {
-          console.log("This is changeDeckType: " + deckType);
           dispatch(setTargetDeckType(deckType));
+        }
+
+        function goBack() {
+          if (activeMove !== 'none') {
+            dispatch(setActiveMove('none'));
+            dispatch(setTargetRow(-1));
+            dispatch(setTargetColumn(-1));
+          }
         }
 
         function sidebarToggle() {
           dispatch(toggleSidebar());
         }
-        console.log(targetDeckType);
         return (
             <div className="Absolver-app">
                 <Sidebar 
@@ -106,10 +129,10 @@ export function Absolver(){
                   deckChange={changeDeckType}>
                 </Sidebar>
                 <div style={{opacity: sidebarIsOpen ? '50%' : '100%'}}>
-                    <Header onClick={sidebarToggle}></Header>
+                    <Header onClick={sidebarToggle} activeMove={activeMove} onGoBack={goBack}></Header>
                     {row > -1 && column > -1 ? 
-                    <Movechooser deckArray={currentDeck} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={activeMove} deckType={targetDeckType}></Movechooser> :
-                    <Deckbuilder deckArray={currentDeck} moveClick={changeView}></Deckbuilder>}
+                    <Movechooser stances={stanceDiamonds} deckArray={currentDeck} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={activeMove} deckType={targetDeckType}></Movechooser> :
+                    <Deckbuilder stances={stanceDiamonds} deckArray={currentDeck} moveClick={changeView}></Deckbuilder>}
                     <Footer></Footer>
                 </div>
             </div>
