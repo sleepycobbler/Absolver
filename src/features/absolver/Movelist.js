@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 
 function Movelist(props) {
   var numberToStance = {
+    '+': "",
     0: "FRONT_RIGHT",
     1: "FRONT_LEFT",
     2: "BACK_RIGHT",
@@ -20,24 +21,60 @@ function Movelist(props) {
     "BACK_LEFT": 3
   }
 
+  var moveData;
+  var movesDeckType = props.deckType==='sword' ?  "sword": 'barehands';
+
+  switch (props.column) {
+    case 0:
+      var stance1 = props.stances[0];
+      var stance2 = props.stances[1];
+      break;
+    case 1:
+      var stance1 = props.stances[1];
+      var stance2 = props.stances[2];
+      break;
+    case 2:
+      var stance1 = props.stances[2];
+      var stance2 = props.stances[3];
+      break;
+    case 3:
+      var stance1 = props.stances[4];
+      var stance2 = props.stances[5];
+      break;
+  }
+
+  props.deckType==='sword' ? 
+  (moveData = data.getSword()) : 
+  (moveData = data.getBareHands());
+
   if (props.column === 3) {
-    var moveData = data.getBareHands().filter(x => Object.keys(x['stance'][props.deckType==='sword' ?  "sword": 'barehands']).includes(numberToStance[props.row]));
     for (const checkMove of moveData) {
-      const [key, value] = Object.entries(checkMove['stance'][props.deckType==='sword' ?  "sword": 'barehands'])[0];
+      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(numberToStance[props.row]));
+      const [key, value] = Object.entries(checkMove['stance'][movesDeckType])[0];
       if (key === value) {
         moveData = moveData.filter(x => x['name'] !== checkMove['name']);
       }
     }
   }
   else {
+    if (stance1 > -1){
+      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(numberToStance[stance1]));
+    }
+    if (stance2 > -1) {
+      moveData = moveData.filter(x => Object.values(x['stance'][movesDeckType]).includes(numberToStance[stance2]));
+    }
+  }
 
-    var moveData = data.getBareHands().filter(x => Object.keys(x['stance'][props.deckType==='sword' ?  "sword": 'barehands']).includes(numberToStance[props.row]));
+  for (var row of props.usedMoves) {
+    for (var usedMove of row) {
+      moveData = moveData.filter(x => x['name'] !== usedMove);
+    }
   }
 
   const moves = moveData.map(move => {
-    var myKeys = Object.keys(move['stance'][props.deckType==='sword' ?  "sword": 'barehands']);
+    var myKeys = Object.keys(move['stance'][movesDeckType]);
     return (
-      <tr key={move['name']} onClick={() => props.rowClick(move['name'], props.row, props.column, props.deckType)}>
+      <tr className={'rowMove'} key={move['name']} onClick={() => props.rowClick(move['name'], props.row, props.column, props.deckType)}>
         <td>{move['name']}</td>
         <td>{move['style']}</td>
         <td>{move['type']}</td>
@@ -76,19 +113,19 @@ function Movelist(props) {
           <th>Name</th>
           <th>Style</th>
           <th>Type</th>
-          <th>Power</th>
-          <th>Strength</th>
-          <th>Dexterity</th>
-          <th>Mobility</th>
-          <th>Damage</th>
-          <th>Range</th>
-          <th>Stamina</th>
+          <th>Pwr</th>
+          <th>Str</th>
+          <th>Dext</th>
+          <th>Mob</th>
+          <th>Dmg</th>
+          <th>Rng</th>
+          <th>Stam</th>
           <th>Impact</th>
-          <th>Startup</th>
-          <th>Adv on Hit</th>
-          <th>Adv on Guard</th>
+          <th>Start</th>
+          <th>Adv: Hit</th>
+          <th>Adv:Guard</th>
           <th>Starts in</th>
-          <th>ends in</th>
+          <th>Ends in</th>
         </tr>
         </thead>
         <tbody>{moves}</tbody>
