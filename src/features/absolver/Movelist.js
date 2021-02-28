@@ -6,23 +6,8 @@ import React, { useState } from 'react';
 
 
 function Movelist(props) {
-  var numberToStance = {
-    '+': "",
-    0: "FRONT_RIGHT",
-    1: "FRONT_LEFT",
-    2: "BACK_RIGHT",
-    3: "BACK_LEFT"
-  }
-
-  var stanceToNumber = {
-    "FRONT_RIGHT": 0,
-    "FRONT_LEFT": 1,
-    "BACK_RIGHT": 2,
-    "BACK_LEFT": 3
-  }
-
   var moveData;
-  var movesDeckType = props.deckType==='sword' ?  "sword": 'barehands';
+  var movesDeckType = props.deckType==='sword' ?  'sword': 'barehands';
 
   switch (props.column) {
     case 0:
@@ -46,22 +31,27 @@ function Movelist(props) {
   props.deckType==='sword' ? 
   (moveData = data.getSword()) : 
   (moveData = data.getBareHands());
+  console.log(moveData)
 
   if (props.column === 3) {
     for (const checkMove of moveData) {
-      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(numberToStance[props.row]));
+      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(props.row));
       const [key, value] = Object.entries(checkMove['stance'][movesDeckType])[0];
       if (key === value) {
         moveData = moveData.filter(x => x['name'] !== checkMove['name']);
+        console.log(moveData)
       }
     }
   }
   else {
     if (stance1 > -1){
-      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(numberToStance[stance1]));
+      console.log(moveData)
+      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(stance1.toString()));
+      console.log(moveData)
     }
     if (stance2 > -1) {
-      moveData = moveData.filter(x => Object.values(x['stance'][movesDeckType]).includes(numberToStance[stance2]));
+      moveData = moveData.filter(x => Object.values(x['stance'][movesDeckType]).includes(stance2));
+      console.log(moveData)
     }
   }
 
@@ -70,7 +60,7 @@ function Movelist(props) {
       moveData = moveData.filter(x => x['name'] !== usedMove);
     }
   }
-
+  console.log(moveData)
   const moves = moveData.map(move => {
     var myKeys = Object.keys(move['stance'][movesDeckType]);
     return (
@@ -91,13 +81,13 @@ function Movelist(props) {
         <td>{move['frames']['advantage']['guard']}</td>
         {myKeys.length == 1 ?
           <React.Fragment>
-          <td><Stance dir={stanceToNumber[myKeys[0]]}></Stance></td>
-          <td><Stance dir={stanceToNumber[move['stance'][props.deckType][myKeys[0]]]}></Stance></td>
+          <td><Stance dir={myKeys[0]}></Stance></td>
+          <td><Stance dir={move['stance'][props.deckType][myKeys[0]]}></Stance></td>
           </React.Fragment>
           :
             <React.Fragment>
-            <td><Stance dir={stanceToNumber[myKeys[0]]}></Stance><Stance dir={stanceToNumber[myKeys[1]]}></Stance></td>
-            <td><Stance dir={stanceToNumber[move['stance'][props.deckType==='sword' ?  "sword": 'barehands'][myKeys[0]]]}></Stance><Stance dir={stanceToNumber[move['stance'][props.deckType==='sword' ?  "sword": 'barehands'][myKeys[1]]]}></Stance></td>
+            <td><Stance dir={myKeys[0]}></Stance><Stance dir={myKeys[1]}></Stance></td>
+            <td><Stance dir={move['stance'][movesDeckType][myKeys[0]]}></Stance><Stance dir={move['stance'][movesDeckType][myKeys[1]]}></Stance></td>
         </React.Fragment>
       }
       </tr>

@@ -52,20 +52,6 @@ export function Absolver(){
         var swordMoves = useSelector(selectSwordMoveData);
         const dispatch = useDispatch();
 
-        var num2Stan = {
-          0: "FRONT_RIGHT",
-          1: "FRONT_LEFT",
-          2: "BACK_RIGHT",
-          3: "BACK_LEFT"
-        }
-      
-        var stan2Num = {
-          "FRONT_RIGHT": 0,
-          "FRONT_LEFT": 1,
-          "BACK_RIGHT": 2,
-          "BACK_LEFT": 3
-        }
-
         if (targetDeckType === 'barehands') {
           var currentDeck = barehandsDeck;
           var currentMoveSet = barehandsMoves;

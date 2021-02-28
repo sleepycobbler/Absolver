@@ -1,19 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as data from '../Moves.js';
 
-var num2Stan = {
-  0: "FRONT_RIGHT",
-  1: "FRONT_LEFT",
-  2: "BACK_RIGHT",
-  3: "BACK_LEFT"
-}
-
-var stan2Num = {
-  "FRONT_RIGHT": 0,
-  "FRONT_LEFT": 1,
-  "BACK_RIGHT": 2,
-  "BACK_LEFT": 3
-}
 
 export const loadoutSlice = createSlice({
   name: 'loadout',
@@ -91,26 +78,26 @@ export const loadoutSlice = createSlice({
       var moveStances = data.getBareHands().find(x => x['name'] == action.payload)['stance']['barehands'];
       switch (state.targetColumn) {
         case 0:
-          state.stanceDiamonds[state.targetRow][1] = stan2Num[moveStances[num2Stan[state.targetRow]]];
+          state.stanceDiamonds[state.targetRow][1] = moveStances[state.targetRow];
           break;
         case 1:
           if ([0, 1, 2, 3].includes(state.stanceDiamonds[state.targetRow][1])) {
-            state.stanceDiamonds[state.targetRow][2] = stan2Num[moveStances[num2Stan[state.stanceDiamonds[state.targetRow][1]]]];
+            state.stanceDiamonds[state.targetRow][2] = moveStances[state.stanceDiamonds[state.targetRow][1]];
           }
           else {
-            state.stanceDiamonds[state.targetRow][2] = stan2Num[Object.entries(moveStances)[0][1]];
+            state.stanceDiamonds[state.targetRow][2] = Object.entries(moveStances)[0][1];
           }
           break;
         case 2:
           if ([0, 1, 2, 3].includes(state.stanceDiamonds[state.targetRow][2])) {
-            state.stanceDiamonds[state.targetRow][3] = stan2Num[moveStances[num2Stan[state.stanceDiamonds[state.targetRow][2]]]];
+            state.stanceDiamonds[state.targetRow][3] = moveStances[state.stanceDiamonds[state.targetRow][2]];
           }
           else {
-            state.stanceDiamonds[state.targetRow][3] = stan2Num[Object.entries(moveStances)[0][1]];
+            state.stanceDiamonds[state.targetRow][3] = Object.entries(moveStances)[0][1];
           }
           break;
         case 3:
-          state.stanceDiamonds[state.targetRow][5] = stan2Num[moveStances[num2Stan[state.targetRow]]];
+          state.stanceDiamonds[state.targetRow][5] = moveStances[state.targetRow];
           break;
       }
     },
@@ -120,20 +107,20 @@ export const loadoutSlice = createSlice({
       var currentMoveSet = state.barehandsMoveData;
       var currentTargetDeckType = 'barehands';
       var moveStances = currentMoveSet.find(x => x['name'] === action.payload)['stance'][state.targetDeckType];
-      switch (state.column) {
+      switch (state.targetColumn) {
         case 0:
-          state.stanceDiamonds[1] = stan2Num[moveStances[num2Stan[state.row]]];
+          state.stanceDiamonds[1] = moveStances[state.targetRow];
           break;
         case 1:
           state.stanceDiamonds[1] = state.stanceDiamonds[1];
-          state.stanceDiamonds[2] = stan2Num[moveStances[num2Stan[1]]];
+          state.stanceDiamonds[2] = moveStances[1];
           break;
         case 2:
           state.stanceDiamonds[2] = state.stanceDiamonds[2];
-          state.stanceDiamonds[3] = stan2Num[moveStances[num2Stan[2]]];
+          state.stanceDiamonds[3] = moveStances[2];
           break;
         case 3:
-          state.stanceDiamonds[5] = stan2Num[moveStances[num2Stan[state.row]]];
+          state.stanceDiamonds[5] = moveStances[state.targetRow];
           break;
       }
     },
@@ -145,18 +132,18 @@ export const loadoutSlice = createSlice({
       var moveStances = currentMoveSet.find(x => x['name'] === action.payload)['stance'][state.targetDeckType];
       switch (state.column) {
         case 0:
-          state.stanceDiamonds[1] = stan2Num[moveStances[num2Stan[state.row]]];
+          state.stanceDiamonds[1] = moveStances[state.row];
           break;
         case 1:
           state.stanceDiamonds[1] = state.stanceDiamonds[1];
-          state.stanceDiamonds[2] = stan2Num[moveStances[num2Stan[1]]];
+          state.stanceDiamonds[2] = moveStances[1];
           break;
         case 2:
           state.stanceDiamonds[2] = state.stanceDiamonds[2];
-          state.stanceDiamonds[3] = stan2Num[moveStances[num2Stan[2]]];
+          state.stanceDiamonds[3] = moveStances[2];
           break;
         case 3:
-          state.stanceDiamonds[5] = stan2Num[moveStances[num2Stan[state.row]]];
+          state.stanceDiamonds[5] = moveStances[state.row];
           break;
       }    
     },

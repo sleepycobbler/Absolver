@@ -5,12 +5,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -38,12 +38,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "thrust",
@@ -71,12 +71,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "vertical",
@@ -104,11 +104,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -136,11 +136,11 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "thrust",
@@ -168,12 +168,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 }
             },
             "type": "horizontal",
@@ -201,11 +201,11 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -233,12 +233,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 }
             },
             "type": "horizontal",
@@ -266,8 +266,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": false
             },
@@ -296,8 +296,8 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": false
             },
@@ -326,11 +326,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "thrust",
@@ -358,11 +358,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT"
+                    0: 1
                 }
             },
             "type": "thrust",
@@ -390,12 +390,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -423,11 +423,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -455,11 +455,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -487,11 +487,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "vertical",
@@ -519,11 +519,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "vertical",
@@ -551,11 +551,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "thrust",
@@ -583,11 +583,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -615,11 +615,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_LEFT": "BACK_LEFT"
+                    1: 2
                 }
             },
             "type": "thrust",
@@ -647,11 +647,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -679,11 +679,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "vertical",
@@ -711,11 +711,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -743,11 +743,11 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_LEFT"
+                    2: 2
                 }
             },
             "type": "vertical",
@@ -775,8 +775,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": false
             },
@@ -805,8 +805,8 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": false
             },
@@ -835,12 +835,12 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -868,8 +868,8 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": false
             },
@@ -898,8 +898,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": false
             },
@@ -928,12 +928,12 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -961,8 +961,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": false
             },
@@ -991,8 +991,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": false
             },
@@ -1021,12 +1021,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -1054,8 +1054,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": false
             },
@@ -1084,8 +1084,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": false
             },
@@ -1114,11 +1114,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "vertical",
@@ -1146,11 +1146,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -1178,11 +1178,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT"
+                    3: 0
                 }
             },
             "type": "thrust",
@@ -1210,11 +1210,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -1242,11 +1242,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "thrust",
@@ -1274,11 +1274,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "thrust",
@@ -1306,11 +1306,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "thrust",
@@ -1338,12 +1338,12 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -1371,12 +1371,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -1404,12 +1404,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -1437,11 +1437,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "vertical",
@@ -1469,11 +1469,11 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "thrust",
@@ -1501,11 +1501,11 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "thrust",
@@ -1533,11 +1533,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "thrust",
@@ -1565,8 +1565,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": false
             },
@@ -1595,12 +1595,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "vertical",
@@ -1628,12 +1628,12 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -1661,12 +1661,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -1694,11 +1694,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "horizontal",
@@ -1725,12 +1725,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 }
             },
             "type": "thrust",
@@ -1758,12 +1758,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 }
             },
             "type": "vertical",
@@ -1791,12 +1791,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -1824,11 +1824,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "thrust",
@@ -1856,8 +1856,8 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": false
             },
@@ -1886,8 +1886,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": false
             },
@@ -1916,11 +1916,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "vertical",
@@ -1948,12 +1948,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -1981,12 +1981,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 }
             },
             "type": "horizontal",
@@ -2014,12 +2014,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "vertical",
@@ -2047,12 +2047,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "vertical",
@@ -2080,11 +2080,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "thrust",
@@ -2112,12 +2112,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -2145,12 +2145,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "horizontal",
@@ -2178,12 +2178,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "thrust",
@@ -2211,11 +2211,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "thrust",
@@ -2243,12 +2243,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -2276,12 +2276,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 }
             },
             "type": "horizontal",
@@ -2309,12 +2309,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -2342,12 +2342,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -2375,8 +2375,8 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": false
             },
@@ -2404,11 +2404,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "thrust",
@@ -2436,12 +2436,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 }
             },
             "type": "horizontal",
@@ -2469,11 +2469,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "thrust",
@@ -2500,11 +2500,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "thrust",
@@ -2532,12 +2532,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "horizontal",
@@ -2565,8 +2565,8 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": false
             },
@@ -2595,12 +2595,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 }
             },
             "type": "vertical",
@@ -2628,11 +2628,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT"
+                    3: 2
                 }
             },
             "type": "thrust",
@@ -2659,11 +2659,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "vertical",
@@ -2691,12 +2691,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "thrust",
@@ -2724,12 +2724,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -2757,12 +2757,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "vertical",
@@ -2790,11 +2790,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -2822,11 +2822,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -2854,11 +2854,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "thrust",
@@ -2886,11 +2886,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_LEFT",
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    0: 2,
+                    1: 3
                 },
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -2918,12 +2918,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 }
             },
             "type": "horizontal",
@@ -2951,12 +2951,12 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -2984,12 +2984,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 }
             },
             "type": "horizontal",
@@ -3017,11 +3017,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "thrust",
@@ -3049,11 +3049,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "horizontal",
@@ -3081,11 +3081,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -3113,8 +3113,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": false
             },
@@ -3143,12 +3143,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -3176,11 +3176,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT"
+                    3: 0
                 }
             },
             "type": "horizontal",
@@ -3208,8 +3208,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": false
             },
@@ -3238,8 +3238,8 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": false
             },
@@ -3268,11 +3268,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -3300,11 +3300,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "horizontal",
@@ -3332,11 +3332,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -3364,12 +3364,12 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -3397,11 +3397,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "horizontal",
@@ -3429,11 +3429,11 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -3461,12 +3461,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 },
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT",
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    0: 1,
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -3494,12 +3494,12 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 }
             },
             "type": "horizontal",
@@ -3527,11 +3527,11 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "thrust",
@@ -3559,12 +3559,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 }
             },
             "type": "horizontal",
@@ -3592,11 +3592,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT"
+                    3: 0
                 }
             },
             "type": "vertical",
@@ -3624,11 +3624,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -3656,11 +3656,11 @@ export function getBareHands() {
             "style": "faejin",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_LEFT",
-                    "BACK_LEFT": "BACK_RIGHT"
+                    3: 2,
+                    2: 3
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -3688,12 +3688,12 @@ export function getBareHands() {
             "style": "windfall",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 },
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT",
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    3: 1,
+                    2: 0
                 }
             },
             "type": "horizontal",
@@ -3721,11 +3721,11 @@ export function getBareHands() {
             "style": "kahlt",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "BACK_RIGHT",
-                    "BACK_LEFT": "BACK_LEFT"
+                    3: 3,
+                    2: 2
                 },
                 "sword": {
-                    "BACK_LEFT": "BACK_LEFT"
+                    2: 2
                 }
             },
             "type": "thrust",
@@ -3753,8 +3753,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "BACK_RIGHT": "FRONT_RIGHT",
-                    "BACK_LEFT": "FRONT_LEFT"
+                    3: 0,
+                    2: 1
                 },
                 "sword": false
             },
@@ -3783,12 +3783,12 @@ export function getBareHands() {
             "style": "forsaken",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "thrust",
@@ -3816,12 +3816,12 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 },
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT",
-                    "FRONT_LEFT": "BACK_LEFT"
+                    0: 3,
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -3849,8 +3849,8 @@ export function getBareHands() {
             "style": "stagger",
             "stance": {
                 "barehands": {
-                    "FRONT_RIGHT": "FRONT_RIGHT",
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    0: 0,
+                    1: 1
                 },
                 "sword": false
             },
@@ -3886,7 +3886,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "vertical",
@@ -3915,7 +3915,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "vertical",
@@ -3944,7 +3944,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_LEFT"
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -3973,7 +3973,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "horizontal",
@@ -4002,7 +4002,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "thrust",
@@ -4031,7 +4031,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -4060,7 +4060,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_LEFT"
+                    1: 2
                 }
             },
             "type": "thrust",
@@ -4089,7 +4089,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "horizontal",
@@ -4118,7 +4118,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -4147,7 +4147,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_LEFT"
+                    2: 2
                 }
             },
             "type": "thrust",
@@ -4176,7 +4176,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_LEFT"
+                    2: 2
                 }
             },
             "type": "vertical",
@@ -4205,7 +4205,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_LEFT"
+                    2: 2
                 }
             },
             "type": "vertical",
@@ -4234,7 +4234,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT"
+                    3: 2
                 }
             },
             "type": "vertical",
@@ -4263,7 +4263,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "horizontal",
@@ -4292,7 +4292,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT"
+                    3: 2
                 }
             },
             "type": "thrust",
@@ -4321,7 +4321,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT"
+                    0: 1
                 }
             },
             "type": "thrust",
@@ -4350,7 +4350,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "vertical",
@@ -4379,7 +4379,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "horizontal",
@@ -4408,7 +4408,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "vertical",
@@ -4437,7 +4437,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "horizontal",
@@ -4466,7 +4466,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -4495,7 +4495,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT"
+                    0: 1
                 }
             },
             "type": "vertical",
@@ -4524,7 +4524,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "horizontal",
@@ -4553,7 +4553,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT"
+                    0: 1
                 }
             },
             "type": "horizontal",
@@ -4582,7 +4582,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -4611,7 +4611,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "thrust",
@@ -4640,7 +4640,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "vertical",
@@ -4669,7 +4669,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "horizontal",
@@ -4698,7 +4698,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "thrust",
@@ -4727,7 +4727,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "thrust",
@@ -4756,7 +4756,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "horizontal",
@@ -4785,7 +4785,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_LEFT"
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -4814,7 +4814,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "vertical",
@@ -4843,7 +4843,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -4872,7 +4872,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT"
+                    3: 0
                 }
             },
             "type": "thrust",
@@ -4901,7 +4901,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "horizontal",
@@ -4930,7 +4930,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "thrust",
@@ -4959,7 +4959,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "horizontal",
@@ -4988,7 +4988,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT"
+                    3: 2
                 }
             },
             "type": "thrust",
@@ -5017,7 +5017,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT"
+                    0: 2
                 }
             },
             "type": "vertical",
@@ -5046,7 +5046,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_LEFT"
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -5075,7 +5075,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT"
+                    3: 0
                 }
             },
             "type": "thrust",
@@ -5104,7 +5104,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "thrust",
@@ -5133,7 +5133,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "horizontal",
@@ -5162,7 +5162,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT"
+                    0: 2
                 }
             },
             "type": "horizontal",
@@ -5191,7 +5191,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT"
+                    0: 1
                 }
             },
             "type": "vertical",
@@ -5220,7 +5220,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "vertical",
@@ -5249,7 +5249,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT"
+                    0: 2
                 }
             },
             "type": "horizontal",
@@ -5278,7 +5278,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "vertical",
@@ -5307,7 +5307,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "vertical",
@@ -5336,7 +5336,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_RIGHT"
+                    0: 0
                 }
             },
             "type": "vertical",
@@ -5365,7 +5365,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "vertical",
@@ -5394,7 +5394,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "thrust",
@@ -5423,7 +5423,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "thrust",
@@ -5452,7 +5452,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "thrust",
@@ -5481,7 +5481,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "horizontal",
@@ -5510,7 +5510,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "thrust",
@@ -5539,7 +5539,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_RIGHT"
+                    1: 0
                 }
             },
             "type": "thrust",
@@ -5568,7 +5568,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_LEFT"
+                    1: 2
                 }
             },
             "type": "horizontal",
@@ -5597,7 +5597,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_LEFT"
+                    3: 2
                 }
             },
             "type": "horizontal",
@@ -5626,7 +5626,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "FRONT_LEFT"
+                    0: 1
                 }
             },
             "type": "vertical",
@@ -5655,7 +5655,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_LEFT"
+                    3: 1
                 }
             },
             "type": "vertical",
@@ -5684,7 +5684,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT"
+                    0: 2
                 }
             },
             "type": "vertical",
@@ -5713,7 +5713,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "FRONT_LEFT"
+                    1: 1
                 }
             },
             "type": "thrust",
@@ -5742,7 +5742,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT"
+                    0: 2
                 }
             },
             "type": "horizontal",
@@ -5771,7 +5771,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "horizontal",
@@ -5800,7 +5800,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_LEFT"
+                    2: 2
                 }
             },
             "type": "vertical",
@@ -5829,7 +5829,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_RIGHT"
+                    0: 3
                 }
             },
             "type": "horizontal",
@@ -5858,7 +5858,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_LEFT"
+                    2: 1
                 }
             },
             "type": "vertical",
@@ -5887,7 +5887,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -5916,7 +5916,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_RIGHT": "BACK_LEFT"
+                    0: 2
                 }
             },
             "type": "vertical",
@@ -5945,7 +5945,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "FRONT_RIGHT"
+                    2: 0
                 }
             },
             "type": "vertical",
@@ -5974,7 +5974,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "FRONT_LEFT": "BACK_RIGHT"
+                    1: 3
                 }
             },
             "type": "horizontal",
@@ -6003,7 +6003,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "BACK_RIGHT"
+                    3: 3
                 }
             },
             "type": "horizontal",
@@ -6032,7 +6032,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_LEFT": "BACK_RIGHT"
+                    2: 3
                 }
             },
             "type": "horizontal",
@@ -6061,7 +6061,7 @@ export function getSword() {
             "stance": {
                 "barehands": false,
                 "sword": {
-                    "BACK_RIGHT": "FRONT_RIGHT"
+                    3: 0
                 }
             },
             "type": "vertical",
