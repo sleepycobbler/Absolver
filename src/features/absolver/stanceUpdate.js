@@ -1,4 +1,4 @@
-import * as data from '../Moves.js';
+import * as data from './Moves.js';
 
 function mergeStance(stanDict) {
     var stan1 = Number(Object.keys(stanDict)[0])
@@ -35,35 +35,32 @@ function mergeStance(stanDict) {
 
 function updateStances(stances, moves) {
     var moveData = data.getBareHands()
-
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             if (moves[i][j] !== '+') {
                 var moveStances = moveData.find(x => x['name'] == moves[i][j])['stance']['barehands'];
+                let b4Move = moves[i][j - 1];
+                let doublesStances = mergeStance(moveStances);
                 switch (j) {
                     case 0:
                         stances[i][1] = moveStances[i];
                         break;
                     case 1:
-                        b4Move = moves[i][j - 1];
                         if (b4Move === '+') {
-                            let doublesStances = mergeStance(moveStances);
                             stances[i][1] = doublesStances[0];
                             stances[i][2] = doublesStances[1];
                         }
                         else {
-                            stances[i][2] = moveStances[stances[1]];
+                            stances[i][2] = moveStances[stances[i][1]];
                         }
                         break;
                     case 2:
-                        b4Move = moves[i][j - 1];
-                        if (b4Move === '+') {
-                            let doublesStances = mergeStance(moveStances);
+                        if (b4Move === '+' || moves[i][0] ==='+') {
                             stances[i][2] = doublesStances[0];
                             stances[i][3] = doublesStances[1];
                         }
                         else {
-                            stances[i][3] = moveStances[stances[2]];
+                            stances[i][3] = moveStances[stances[i][2]];
                         }
                         break;
                     case 3:
@@ -77,3 +74,4 @@ function updateStances(stances, moves) {
     return stances;
 }
 
+export default updateStances;
