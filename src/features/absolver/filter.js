@@ -32,6 +32,18 @@ function filterMoves(props) {
 
   if (stance1 > 3 && stance2 > 3) {
       moveData = moveData;
+      switch (stance1){
+        case 4:
+        case 5:
+            moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes('0') ||
+                                            Object.keys(x['stance'][movesDeckType]).includes('1'));
+            break;
+        case 6:
+        case 7:
+            moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes('2') ||
+                                            Object.keys(x['stance'][movesDeckType]).includes('3'));
+            break;
+      }
   }
   else if (stance1 > 3) {
     switch (stance1){
@@ -77,13 +89,8 @@ function filterMoves(props) {
       }
     }
   else if (props.column === 3) {
-    for (const checkMove of moveData) {
-      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(props.row));
-      const [key, value] = Object.entries(checkMove['stance'][movesDeckType])[0];
-      if (key === value) {
-        moveData = moveData.filter(x => x['name'] !== checkMove['name']);
-      }
-    }
+    moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(stance1.toString()));
+    moveData = moveData.filter(x => x['stance'][movesDeckType][stance1] !== stance1);
   }
   else {
     if (stance1 > -1){

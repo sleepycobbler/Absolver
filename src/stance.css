@@ -1,0 +1,153 @@
+.Absolver-stance {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  
+  .Absolver-stance-square-active {
+    width: 22px;
+    height: 22px;
+    background-color: #545255;
+    transform: rotate(45deg);
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  
+  .Absolver-stance-square-inactive {
+    width: 22px;
+    height: 22px;
+    background-color: #545255;
+    transform: rotate(45deg);
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    opacity: 30%;
+  
+  }
+  
+  .Absolver-stance-pointer-1 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(-50%, 50%);
+  }
+  
+  .Absolver-stance-pointer-0 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(-50%, -50%);
+  }
+  
+  .Absolver-stance-pointer-2 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(50%, 50%);
+  }
+  
+  .Absolver-stance-pointer-3 {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
+  }
+  
+  .Absolver-stance-pointer-rtl {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(-50%, 50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-btr {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-btl {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(-50%, 50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-rtr {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-rbl {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(50%, 50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-bbr {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-bbl {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(0.5, 1.5) rotate(45deg) translate(50%, 50%);
+    position: absolute;
+  }
+  
+  .Absolver-stance-pointer-rbr {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 3px;
+    transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
+    position: absolute;
+  }
