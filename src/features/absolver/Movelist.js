@@ -1,66 +1,87 @@
 import Movebar from './Movebar';
+import filterMoves from './filter'
 import * as data from './Moves.js';
 import Stance from './Stance.js';
 import React, { useState } from 'react';
 
-
+function mergeStance(stanDict) {
+  var stan1 = Number(Object.keys(stanDict)[0])
+  var stan2 = Number(Object.keys(stanDict)[1])
+  var stan3 = Number(Object.values(stanDict)[0])
+  var stan4 = Number(Object.values(stanDict)[1])
+  switch ([stan1, stan2, stan3, stan4].join('')) {
+    case '0110':
+    case '1001':
+      return (
+        <React.Fragment>
+          <td><Stance dir={4}></Stance></td>
+          <td><Stance dir={5}></Stance></td>
+        </React.Fragment>
+      );
+    case '0101':
+    case '1010':
+      return (
+        <React.Fragment>
+          <td><Stance dir={4}></Stance></td>
+          <td><Stance dir={4}></Stance></td>
+        </React.Fragment>
+      );
+    case '0132':
+    case '1023':
+      return (
+        <React.Fragment>
+          <td><Stance dir={4}></Stance></td>
+          <td><Stance dir={6}></Stance></td>
+        </React.Fragment>
+      );
+    case '0123':
+    case '1032':
+      return (
+        <React.Fragment>
+          <td><Stance dir={5}></Stance></td>
+          <td><Stance dir={6}></Stance></td>
+        </React.Fragment>
+      );
+    case '3232':
+    case '2323':
+      return (
+        <React.Fragment>
+          <td><Stance dir={6}></Stance></td>
+          <td><Stance dir={6}></Stance></td>
+        </React.Fragment>
+      );
+    case '3223':
+    case '2332':
+      return (
+        <React.Fragment>
+          <td><Stance dir={6}></Stance></td>
+          <td><Stance dir={7}></Stance></td>
+        </React.Fragment>
+      );
+    case '3201':
+    case '2310':
+      return (
+        <React.Fragment>
+          <td><Stance dir={6}></Stance></td>
+          <td><Stance dir={4}></Stance></td>
+        </React.Fragment>
+      );
+    case '3210':
+    case '2301':
+      return (
+        <React.Fragment>
+          <td><Stance dir={6}></Stance></td>
+          <td><Stance dir={5}></Stance></td>
+        </React.Fragment>
+      );
+  }
+  console.log(stanDict)
+}
 
 function Movelist(props) {
-  var moveData;
+  var moveData = filterMoves(props);
   var movesDeckType = props.deckType==='sword' ?  'sword': 'barehands';
 
-  switch (props.column) {
-    case 0:
-      var stance1 = props.stances[0];
-      var stance2 = props.stances[1];
-      break;
-    case 1:
-      var stance1 = props.stances[1];
-      var stance2 = props.stances[2];
-      break;
-    case 2:
-      var stance1 = props.stances[2];
-      var stance2 = props.stances[3];
-      break;
-    case 3:
-      var stance1 = props.stances[4];
-      var stance2 = props.stances[5];
-      break;
-  }
-
-  props.deckType==='sword' ? 
-  (moveData = data.getSword()) : 
-  (moveData = data.getBareHands());
-  console.log(moveData)
-
-  if (props.column === 3) {
-    for (const checkMove of moveData) {
-      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(props.row));
-      const [key, value] = Object.entries(checkMove['stance'][movesDeckType])[0];
-      if (key === value) {
-        moveData = moveData.filter(x => x['name'] !== checkMove['name']);
-        console.log(moveData)
-      }
-    }
-  }
-  else {
-    if (stance1 > -1){
-      console.log(moveData)
-      moveData = moveData.filter(x => Object.keys(x['stance'][movesDeckType]).includes(stance1.toString()));
-      console.log(moveData)
-    }
-    if (stance2 > -1) {
-      moveData = moveData.filter(x => Object.values(x['stance'][movesDeckType]).includes(stance2));
-      console.log(moveData)
-    }
-  }
-
-  for (var row of props.usedMoves) {
-    for (var usedMove of row) {
-      moveData = moveData.filter(x => x['name'] !== usedMove);
-    }
-  }
-  console.log(moveData)
   const moves = moveData.map(move => {
     var myKeys = Object.keys(move['stance'][movesDeckType]);
     return (
@@ -81,14 +102,11 @@ function Movelist(props) {
         <td>{move['frames']['advantage']['guard']}</td>
         {myKeys.length == 1 ?
           <React.Fragment>
-          <td><Stance dir={myKeys[0]}></Stance></td>
-          <td><Stance dir={move['stance'][props.deckType][myKeys[0]]}></Stance></td>
+            <td><Stance dir={myKeys[0]}></Stance></td>
+            <td><Stance dir={move['stance'][props.deckType][myKeys[0]]}></Stance></td>
           </React.Fragment>
           :
-            <React.Fragment>
-            <td><Stance dir={myKeys[0]}></Stance><Stance dir={myKeys[1]}></Stance></td>
-            <td><Stance dir={move['stance'][movesDeckType][myKeys[0]]}></Stance><Stance dir={move['stance'][movesDeckType][myKeys[1]]}></Stance></td>
-        </React.Fragment>
+          mergeStance(move['stance'][movesDeckType])
       }
       </tr>
     );

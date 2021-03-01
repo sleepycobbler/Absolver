@@ -1,6 +1,38 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as data from '../Moves.js';
 
+function mergeStance(stanDict) {
+  var stan1 = Number(Object.keys(stanDict)[0])
+  var stan2 = Number(Object.keys(stanDict)[1])
+  var stan3 = Number(Object.values(stanDict)[0])
+  var stan4 = Number(Object.values(stanDict)[1])
+  switch ([stan1, stan2, stan3, stan4].join('')) {
+    case '0110':
+    case '1001':
+      return [4, 5];
+    case '0101':
+    case '1010':
+      return [4, 4];
+    case '0132':
+    case '1023':
+      return [4, 6];
+    case '0123':
+    case '1032':
+      return [5, 6];
+    case '3232':
+    case '2323':
+      return [6, 6];
+    case '3223':
+    case '2332':
+      return [6, 7];
+    case '3201':
+    case '2310':
+      return [6, 4];
+    case '3210':
+    case '2301':
+      return [6, 5];
+  }
+}
 
 export const loadoutSlice = createSlice({
   name: 'loadout',
@@ -75,25 +107,30 @@ export const loadoutSlice = createSlice({
     },
     updateBarehandsDeck: (state, action) => {
       state.barehandsCurrent[state.barehandsCurrent.length - 1][state.targetRow][state.targetColumn] = action.payload;
+      // state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent)
       var moveStances = data.getBareHands().find(x => x['name'] == action.payload)['stance']['barehands'];
       switch (state.targetColumn) {
         case 0:
           state.stanceDiamonds[state.targetRow][1] = moveStances[state.targetRow];
           break;
         case 1:
-          if ([0, 1, 2, 3].includes(state.stanceDiamonds[state.targetRow][1])) {
+          if ([0, 1, 2, 3, 4, 5, 6, 7].includes(state.stanceDiamonds[state.targetRow][1])) {
             state.stanceDiamonds[state.targetRow][2] = moveStances[state.stanceDiamonds[state.targetRow][1]];
           }
           else {
-            state.stanceDiamonds[state.targetRow][2] = Object.entries(moveStances)[0][1];
+            var stanceDoubles = mergeStance(moveStances);
+            state.stanceDiamonds[state.targetRow][1] = stanceDoubles[0];
+            state.stanceDiamonds[state.targetRow][2] = stanceDoubles[1];
           }
           break;
         case 2:
-          if ([0, 1, 2, 3].includes(state.stanceDiamonds[state.targetRow][2])) {
+          if ([0, 1, 2, 3, 4, 5, 6, 7].includes(state.stanceDiamonds[state.targetRow][2])) {
             state.stanceDiamonds[state.targetRow][3] = moveStances[state.stanceDiamonds[state.targetRow][2]];
           }
           else {
-            state.stanceDiamonds[state.targetRow][3] = Object.entries(moveStances)[0][1];
+            var stanceDoubles = mergeStance(moveStances);
+            state.stanceDiamonds[state.targetRow][2] = stanceDoubles[0];
+            state.stanceDiamonds[state.targetRow][3] = stanceDoubles[1];
           }
           break;
         case 3:

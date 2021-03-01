@@ -254,10 +254,6 @@ table th {
 
 }
 
-.Absolver-stance-pointer- {
-  display: none;
-}
-
 .Absolver-stance-pointer-1 {
   width: 7px;
   height: 7px;
@@ -293,6 +289,87 @@ table th {
   border-radius: 3px;
   transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
 }
+
+.Absolver-stance-pointer-rtl {
+  width: 7px;
+  height: 7px;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(1.5, 0.5) rotate(45deg) translate(-50%, 50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-btr {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(0.5, 1.5) rotate(45deg) translate(-50%, -50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-btl {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(1.5, 0.5) rotate(45deg) translate(-50%, 50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-rtr {
+  width: 7px;
+  height: 7px;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(0.5, 1.5) rotate(45deg) translate(-50%, -50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-rbl {
+  width: 7px;
+  height: 7px;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(0.5, 1.5) rotate(45deg) translate(50%, 50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-bbr {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-bbl {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(0.5, 1.5) rotate(45deg) translate(50%, 50%);
+  position: absolute;
+}
+
+.Absolver-stance-pointer-rbr {
+  width: 7px;
+  height: 7px;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 3px;
+  transform: scale(1.5, 0.5) rotate(45deg) translate(50%, -50%);
+  position: absolute;
+}
+
 
 .Absolver-move {
   width: 104px;
