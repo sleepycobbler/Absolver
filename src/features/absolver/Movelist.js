@@ -38,8 +38,8 @@ function mergeStance(stanDict) {
     case '1032':
       return (
         <React.Fragment>
-          <td><Stance dir={5}></Stance></td>
-          <td><Stance dir={6}></Stance></td>
+          <td><Stance dir={4}></Stance></td>
+          <td><Stance dir={7}></Stance></td>
         </React.Fragment>
       );
     case '3232':
