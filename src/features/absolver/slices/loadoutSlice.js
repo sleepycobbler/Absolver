@@ -51,6 +51,20 @@ export const loadoutSlice = createSlice({
   reducers: {
     setTargetDeckType: (state, action) => {
       if (["barehands", 'wargloves', 'sword'].includes(action.payload)) {
+        switch (action.payload) {
+          case "barehands":
+            state.targetDeckType = action.payload;
+            state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1], action.payload);
+            break;
+          case "wargloves":
+            state.targetDeckType = action.payload;
+            state.stanceDiamonds = updateStances(state.stanceDiamonds, state.warglovesCurrent[state.warglovesCurrent.length - 1], action.payload);
+            break;
+          case "sword":
+            state.targetDeckType = action.payload;
+            state.stanceDiamonds = updateStances(state.stanceDiamonds, state.swordCurrent[state.swordCurrent.length - 1], action.payload);
+            break;
+        }
         state.targetDeckType = action.payload;
       } else {
         throw 'Submitted value not a valid deck type.';
@@ -82,7 +96,7 @@ export const loadoutSlice = createSlice({
     },
     updateBarehandsDeck: (state, action) => {
       state.barehandsCurrent[state.barehandsCurrent.length - 1][state.targetRow][state.targetColumn] = action.payload;
-      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1]);
+      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1], state.targetDeckType);
     },
     moveRemove: (state, action) => {
       for (let i = 0; i < 4; i++) {
@@ -92,53 +106,15 @@ export const loadoutSlice = createSlice({
           }
         }
       }
-      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1]);
+      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1], state.targetDeckType);
     },
     updateWarglovesDeck: (state, action) => {
       state.warglovesCurrent[state.warglovesCurrent.length - 1][state.targetRow][state.targetColumn] = action.payload;
-      var currentDeck = state.barehandsDeck;
-      var currentMoveSet = state.barehandsMoveData;
-      var currentTargetDeckType = 'barehands';
-      var moveStances = currentMoveSet.find(x => x['name'] === action.payload)['stance'][state.targetDeckType];
-      switch (state.targetColumn) {
-        case 0:
-          state.stanceDiamonds[1] = moveStances[state.targetRow];
-          break;
-        case 1:
-          state.stanceDiamonds[1] = state.stanceDiamonds[1];
-          state.stanceDiamonds[2] = moveStances[1];
-          break;
-        case 2:
-          state.stanceDiamonds[2] = state.stanceDiamonds[2];
-          state.stanceDiamonds[3] = moveStances[2];
-          break;
-        case 3:
-          state.stanceDiamonds[5] = moveStances[state.targetRow];
-          break;
-      }
+      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.warglovesCurrent[state.warglovesCurrent.length - 1], state.targetDeckType);
     },
     updateSwordDeck: (state, action) => {
       state.swordCurrent[state.swordCurrent.length - 1][state.targetRow][state.targetColumn] = action.payload;
-      var currentDeck = state.swordDeck;
-      var currentMoveSet = state.swordsMoveData;
-      var currentTargetDeckType = 'sword';
-      var moveStances = currentMoveSet.find(x => x['name'] === action.payload)['stance'][state.targetDeckType];
-      switch (state.column) {
-        case 0:
-          state.stanceDiamonds[1] = moveStances[state.row];
-          break;
-        case 1:
-          state.stanceDiamonds[1] = state.stanceDiamonds[1];
-          state.stanceDiamonds[2] = moveStances[1];
-          break;
-        case 2:
-          state.stanceDiamonds[2] = state.stanceDiamonds[2];
-          state.stanceDiamonds[3] = moveStances[2];
-          break;
-        case 3:
-          state.stanceDiamonds[5] = moveStances[state.row];
-          break;
-      }
+      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.swordCurrent[state.swordCurrent.length - 1], state.targetDeckType);
     },
     setHoveredMove: (state, action) => {
       state.hoveredMove = action.payload;

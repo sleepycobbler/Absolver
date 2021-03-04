@@ -33,12 +33,14 @@ function mergeStance(stanDict) {
   }
 }
 
-function updateStances(stances, moves) {
-  var moveData = data.getBareHands()
+function updateStances(stances, moves, decktype) {
+  var moveSet = decktype == 'sword' ? 'sword' : 'barehands';
+  var moveData;
+  moveSet == 'sword' ? moveData = data.getSword() : moveData = data.getBareHands()
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
       if (moves[i][j] !== '+') {
-        var moveStances = moveData.find(x => x['name'] == moves[i][j])['stance']['barehands'];
+        var moveStances = moveData.find(x => x['name'] == moves[i][j])['stance'][moveSet];
         let b4Move = moves[i][j - 1];
         let nxMove = moves[i][j + 1];
         let doublesStances = mergeStance(moveStances);

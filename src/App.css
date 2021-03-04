@@ -30,6 +30,7 @@
   margin: 0px;
   flex-grow:1;
   text-align: center;
+  transition: 0.5s;
 }
 
 .Absolver-footer {
@@ -58,6 +59,18 @@
 .Absolver-sidebar-open {
   font-size:30px;
   margin-left: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 5px;
+}
+
+.Absolver-sidebar-open:hover {
+  font-size:30px;
+  margin-left: 20px;
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
 .Absolver-sidebar a {

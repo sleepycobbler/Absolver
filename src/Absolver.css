@@ -90,6 +90,10 @@
     
   }
 
+  .Absolver-move-parent:hover {
+    cursor: pointer;
+  }
+
   .Absolver-move {
     width: 104px;
     height: 104px;
@@ -100,6 +104,7 @@
     justify-content: center;
     position: relative;
     z-index: 1;
+    cursor: pointer;
   }
 
   .Absolver-move:hover ~ .Absolver-move-delete{
@@ -112,6 +117,7 @@
     display: flex;
     transition-duration: all 0.1s;
     transform: translateY(-65px);
+    cursor: pointer;
   }
 
   .Absolver-move-delete-hidden {
@@ -135,6 +141,7 @@
     width: 104px;
     position:absolute;
     z-index: 1;
+    cursor: pointer;
   }
   
   .Absolver-move-parent > div > div {
@@ -144,6 +151,7 @@
     color: white;
     margin: 5px;
     z-index: 1;
+    cursor: pointer;
   }
   
   .Absolver-move-plus {
@@ -158,6 +166,10 @@
     font-size: 300%;
     font-weight: bolder;
     color: white;
+  }
+
+  .Absolver-move-plus:hover {
+    cursor: pointer;
   }
   
   @media only screen and (max-width: 600px) {
