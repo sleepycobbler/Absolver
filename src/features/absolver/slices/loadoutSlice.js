@@ -101,8 +101,25 @@ export const loadoutSlice = createSlice({
     moveRemove: (state, action) => {
       for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
-          if (state.barehandsCurrent[state.barehandsCurrent.length - 1][i][j] === action.payload) {
-            state.barehandsCurrent[state.barehandsCurrent.length - 1][i][j] = '+';
+          switch (state.targetDeckType) {
+            case 'barehands':
+              if (state.barehandsCurrent[state.barehandsCurrent.length - 1][i][j] === action.payload) {
+                state.barehandsCurrent[state.barehandsCurrent.length - 1][i][j] = '+';
+                state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1], state.targetDeckType);
+              }
+              break;
+            case 'wargloves':
+              if (state.warglovesCurrent[state.warglovesCurrent.length - 1][i][j] === action.payload) {
+                state.warglovesCurrent[state.warglovesCurrent.length - 1][i][j] = '+';
+                state.stanceDiamonds = updateStances(state.stanceDiamonds, state.warglovesCurrent[state.warglovesCurrent.length - 1], state.targetDeckType);
+              }
+              break;
+            case 'sword':
+              if (state.swordCurrent[state.swordCurrent.length - 1][i][j] === action.payload) {
+                state.swordCurrent[state.swordCurrent.length - 1][i][j] = '+';
+                state.stanceDiamonds = updateStances(state.stanceDiamonds, state.swordCurrent[state.swordCurrent.length - 1], state.targetDeckType);
+              }
+              break;
           }
         }
       }

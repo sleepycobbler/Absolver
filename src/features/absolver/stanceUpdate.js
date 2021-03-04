@@ -49,12 +49,12 @@ function updateStances(stances, moves, decktype) {
             stances[i][1] = moveStances[i];
             break;
           case 1:
-            if (b4Move === '+' && nxMove === '+') {
+            if (b4Move === '+' && nxMove === '+' && moveSet == 'barehands') {
               stances[i][1] = doublesStances[0];
               stances[i][2] = doublesStances[1];
             } else if (b4Move !== '+') {
               stances[i][2] = moveStances[stances[i][1]];
-            } else if (nxMove !== '+') {
+            } else if (nxMove !== '+' && moveSet == 'barehands') {
               if (4 === doublesStances[1] || 6 === doublesStances[1]) {
                 stances[i][1] = doublesStances[0]
               } else {
@@ -65,10 +65,10 @@ function updateStances(stances, moves, decktype) {
             }
             break;
           case 2:
-            if (b4Move === '+') {
+            if (b4Move === '+' && moveSet == 'barehands') {
               stances[i][2] = doublesStances[0];
               stances[i][3] = doublesStances[1];
-            } else if (stances[i][2] > 3) {
+            } else if (stances[i][2] > 3 && moveSet == 'barehands') {
               if (stances[i][2] == doublesStances[0]) {
                 stances[i][3] = doublesStances[1]
               } else {
