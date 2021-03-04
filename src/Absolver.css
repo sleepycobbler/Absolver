@@ -77,29 +77,73 @@
     
   }
   
-  .Absolver-move {
+  .Absolver-move-parent {
     width: 104px;
     height: 104px;
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0);
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
     
   }
-  
-  .Absolver-move > img{
+
+  .Absolver-move {
     width: 104px;
-    position:absolute;
+    height: 104px;
+    background-color: rgba(0, 0, 0);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .Absolver-move:hover ~ .Absolver-move-delete{
+    display: flex;
+    transition-duration: all 0.1s;
+    transform: translateY(-65px);
+  }
+
+  .Absolver-move-delete:hover {
+    display: flex;
+    transition-duration: all 0.1s;
+    transform: translateY(-65px);
+  }
+
+  .Absolver-move-delete-hidden {
+    width: 50px;
+    height: 20px;
+    transition-duration: all 0.1s;
+  }
+
+  .Absolver-move-delete {
+    transition: transform 0.1s ease-out;
+    position: absolute;
+    padding: 10px;
+    width: 50px;
+    height: 20px;
+    background-color: red;
+    z-index: 0;
+    transform: translateY(-30px);
   }
   
-  .Absolver-move > div{
+  .Absolver-move-parent > div > img{
+    width: 104px;
+    position:absolute;
+    z-index: 1;
+  }
+  
+  .Absolver-move-parent > div > div {
     position:absolute;
     right: 0;
     top: 0;
     color: white;
     margin: 5px;
+    z-index: 1;
   }
   
   .Absolver-move-plus {

@@ -32,7 +32,8 @@ import {
   selectBarehandMoveData,
   selectSwordMoveData,
   selectTargetRow,
-  selectTargetColumn
+  selectTargetColumn,
+  moveRemove
 } from './slices/loadoutSlice.js'
 
 export function Absolver(){
@@ -65,7 +66,11 @@ export function Absolver(){
           var currentMoveSet = swordMoves;
         }
 
-        var currentTargetDeckType = (targetDeckType ==='sword' ?  "sword" : 'barehands');     
+        var currentTargetDeckType = (targetDeckType ==='sword' ?  "sword" : 'barehands');
+
+        function deleteMove(moveName) {
+          dispatch(moveRemove(moveName));
+        }
 
         function changeView(moveName, moveRow, moveColumn) {
           if (row === -1 && column === -1 && row !== moveRow && column !== moveColumn) {
@@ -117,8 +122,8 @@ export function Absolver(){
                 <div style={{opacity: sidebarIsOpen ? '50%' : '100%'}}>
                     <Header onClick={sidebarToggle} activeMove={activeMove} onGoBack={goBack}></Header>
                     {row > -1 && column > -1 ? 
-                    <Movechooser stances={stanceDiamonds} deckArray={currentDeck} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={activeMove} deckType={targetDeckType}></Movechooser> :
-                    <Deckbuilder stances={stanceDiamonds} deckArray={currentDeck} moveClick={changeView}></Deckbuilder>}
+                    <Movechooser stances={stanceDiamonds} deckArray={currentDeck} row={row} column={column} moveClick={changeView} rowClick={rowClick} moveName={activeMove} deckType={targetDeckType} moveDelete={deleteMove}></Movechooser> :
+                    <Deckbuilder stances={stanceDiamonds} deckArray={currentDeck} moveClick={changeView} moveDelete={deleteMove}></Deckbuilder>}
                     <Footer></Footer>
                 </div>
             </div>

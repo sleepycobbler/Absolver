@@ -80,6 +80,20 @@ function updateStances(stances, moves) {
             stances[i][5] = moveStances[i];
             break;
         }
+      } else {
+        switch (j) {
+          case 0:
+            if (moves[i][j + 1] === '+') 
+            stances[i][1] = -1;
+            break;
+          case 1:
+            if (moves[i][j + 1] === '+') 
+            stances[i][2] = -1;
+          case 2:
+            stances[i][3] = -1;
+          case 3:
+            stances[i][5] = -1;
+        }
       }
     }
   }

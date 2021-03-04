@@ -1,4 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {
+  createSlice
+} from '@reduxjs/toolkit';
 import * as data from '../Moves.js';
 import updateStances from '../stanceUpdate.js'
 
@@ -6,13 +8,13 @@ export const loadoutSlice = createSlice({
   name: 'loadout',
   initialState: {
     targetDeckType: 'barehands',
-    style: 'none', 
+    style: 'none',
     powers: ['none', 'none'],
     targetRow: -1,
     targetColumn: -1,
     barehandsMoveData: data.getBareHands(),
     swordMoveData: data.getSword(),
-    sideBarIsOpen: false, 
+    sideBarIsOpen: false,
     hoveredMove: 'none',
     activeMove: 'none',
     stanceDiamonds: [
@@ -21,31 +23,36 @@ export const loadoutSlice = createSlice({
       [2, -1, -1, -1, 2, -1],
       [3, -1, -1, -1, 3, -1],
     ],
-    barehandsCurrent: [[
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-    ]],
-    warglovesCurrent: [[
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-    ]],
-    swordCurrent: [[
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-      ['+', '+', '+', '+'],
-    ]],
+    barehandsCurrent: [
+      [
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+      ]
+    ],
+    warglovesCurrent: [
+      [
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+      ]
+    ],
+    swordCurrent: [
+      [
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+        ['+', '+', '+', '+'],
+      ]
+    ],
   },
   reducers: {
     setTargetDeckType: (state, action) => {
       if (["barehands", 'wargloves', 'sword'].includes(action.payload)) {
         state.targetDeckType = action.payload;
-      }
-      else {
+      } else {
         throw 'Submitted value not a valid deck type.';
       }
     },
@@ -62,19 +69,29 @@ export const loadoutSlice = createSlice({
     setStyle: (state, action) => {
       var payload = action.payload;
       if (['forsaken',
-           'windfall', 
-           'kahlt', 
-           'stagger', 
-           'faejin', 
-           'lost prospect'].includes(payload)) {
+          'windfall',
+          'kahlt',
+          'stagger',
+          'faejin',
+          'lost prospect'
+        ].includes(payload)) {
         state.style = payload
-      }
-      else {
+      } else {
         throw 'Submitted string not a valid style.';
       }
     },
     updateBarehandsDeck: (state, action) => {
       state.barehandsCurrent[state.barehandsCurrent.length - 1][state.targetRow][state.targetColumn] = action.payload;
+      state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1]);
+    },
+    moveRemove: (state, action) => {
+      for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+          if (state.barehandsCurrent[state.barehandsCurrent.length - 1][i][j] === action.payload) {
+            state.barehandsCurrent[state.barehandsCurrent.length - 1][i][j] = '+';
+          }
+        }
+      }
       state.stanceDiamonds = updateStances(state.stanceDiamonds, state.barehandsCurrent[state.barehandsCurrent.length - 1]);
     },
     updateWarglovesDeck: (state, action) => {
@@ -121,7 +138,7 @@ export const loadoutSlice = createSlice({
         case 3:
           state.stanceDiamonds[5] = moveStances[state.row];
           break;
-      }    
+      }
     },
     setHoveredMove: (state, action) => {
       state.hoveredMove = action.payload;
@@ -136,39 +153,40 @@ export const loadoutSlice = createSlice({
       state.sideBarIsOpen = !state.sideBarIsOpen;
     },
     setTargetRow: (state, action) => {
-      if ([-1, 0, 1, 2, 3].includes(action.payload)){
+      if ([-1, 0, 1, 2, 3].includes(action.payload)) {
         state.targetRow = action.payload;
-      }
-      else {
+      } else {
         throw 'Row target contains invalid value.';
       }
     },
     setTargetColumn: (state, action) => {
-      if ([-1, 0, 1, 2, 3].includes(action.payload)){
+      if ([-1, 0, 1, 2, 3].includes(action.payload)) {
         state.targetColumn = action.payload;
-      }
-      else {
+      } else {
         throw 'Column target contains invalid value.';
       }
     },
     setStanceDiamonds: (state, action) => {
-     
+
     }
   }
 })
 
-export const {setTargetDeckType, 
-              setPowers, 
-              setStyle, 
-              updateBarehandsDeck, 
-              updateWarglovesDeck, 
-              updateSwordDeck, 
-              setHoveredMove, 
-              setSidebar, 
-              toggleSidebar, 
-              setTargetRow, 
-              setTargetColumn,
-              setActiveMove} = loadoutSlice.actions;
+export const {
+  setTargetDeckType,
+  setPowers,
+  setStyle,
+  updateBarehandsDeck,
+  updateWarglovesDeck,
+  updateSwordDeck,
+  setHoveredMove,
+  setSidebar,
+  toggleSidebar,
+  setTargetRow,
+  setTargetColumn,
+  setActiveMove,
+  moveRemove
+} = loadoutSlice.actions;
 export const selectStyle = state => state.loadout.style;
 export const selectTargetDeckType = state => state.loadout.targetDeckType;
 export const selectPowers = state => state.loadout.powerChoices;
