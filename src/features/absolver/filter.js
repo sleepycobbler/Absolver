@@ -6,7 +6,6 @@ import React, {
 } from 'react';
 
 function filterMoves(props) {
-  var moveData;
   var movesDeckType = props.deckType === 'sword' ? 'sword' : 'barehands';
 
   switch (props.column) {
@@ -29,10 +28,11 @@ function filterMoves(props) {
       var stance2 = props.stances[5];
       break;
   }
-
-  props.deckType === 'sword' ?
-    (moveData = data.getSword()) :
-    (moveData = data.getBareHands());
+  var moveData = data.getBareHands()
+  if (movesDeckType === 'sword') {
+    moveData = moveData.filter(x => x['stance']['sword'] !== false)
+    moveData = moveData.concat(data.getSword())
+  }
 
   if (stance1 > 3 && stance2 > 3) {
     if (props.column === 1 && stanceAlt > 3) {
