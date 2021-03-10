@@ -30,12 +30,12 @@ const Movechooser = ({
   deckType,
 }) => (
   <div className="Absolver-movechooser">
-      {
-        (column < 3) ? 
-          <Combo stances={stances[row]} row={row} rowState={deckArray[row] } moveClick={moveClick} moveDelete={moveDelete} /> :
-          <Alt stances={stances[row]} row={row} moveName={deckArray[row][column]} moveClick={moveClick} moveDelete={moveDelete} />
-      }
-      <Movelist usedMoves={deckArray} stances={stances[row]} row={row} column={column} deckType={deckType} rowClick={rowClick} />
+    {
+    (column < 3) ? 
+      <Combo stances={stances[row]} row={row} rowState={deckArray[row] } moveClick={moveClick} moveDelete={moveDelete} /> :
+      <Alt stances={stances[row]} row={row} moveName={deckArray[row][column]} moveClick={moveClick} moveDelete={moveDelete} />
+    }
+    <Movelist usedMoves={deckArray} stances={stances[row]} row={row} column={column} deckType={deckType} rowClick={rowClick} />
   </div>
 );
 

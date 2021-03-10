@@ -3,6 +3,6 @@ import loadoutReducer from '../features/absolver/slices/loadoutSlice'
 
 export default configureStore({
   reducer: {
-      loadout: loadoutReducer,
+    loadout: loadoutReducer,
   },
 });

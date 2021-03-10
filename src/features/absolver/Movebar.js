@@ -10,8 +10,8 @@ import React from 'react';
 const Movebar = () => {
   return (
     <div className="Absolver-movebar">
-        <div className='filter'>Filters</div>
-        <div className='searchBar'><input type="text" placeholder="Search.." name="search" /></div>
+      <div className='filter'>Filters</div>
+      <div className='searchBar'><input type="text" placeholder="Search.." name="search" /></div>
     </div>
   )
 }
