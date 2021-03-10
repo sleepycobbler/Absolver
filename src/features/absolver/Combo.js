@@ -5,11 +5,11 @@ import Move from './Move';
  * This section represents the structure for a set of three moves, known as a combo. It contains
  * 4 stance components and 3 move components.
  * @component
- * @param {function}      moveClick - Click event that sets target row and column. 
- * @param {function}      moveDelete - Click event that removes current move data from a target row and column
- * @param {int}           row - The row number.
+ * @param {function} moveClick - Click event that sets target row and column. 
+ * @param {function} moveDelete - Click event that removes current move data from a target row and column
+ * @param {int} row - The row number.
  * @param {Array.<string>} rowState - An array of move names.
- * @param {Array.<int>}    stances - An array of stance positions.
+ * @param {Array.<int>} stances - An array of stance positions.
  * @returns A div, containing alternating stance and move components.
  * @author Max Schuhmacher <sleepycobbler@gmail.com>
  */
