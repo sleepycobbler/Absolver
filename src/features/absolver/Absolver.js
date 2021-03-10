@@ -77,11 +77,11 @@ const Absolver = () => {
 
   // var currentTargetDeckType = (targetDeckType ==='sword' ?  "sword" : 'barehands');
 
-  function deleteMove(moveName) {
+  const deleteMove = (moveName) => {
     dispatch(moveRemove(moveName));
   }
 
-  function changeView(moveName, moveRow, moveColumn) {
+  const changeView = (moveName, moveRow, moveColumn) => {
     if (row === -1      && column === -1 && 
         row !== moveRow && column !== moveColumn) {
       dispatch(setActiveMove(moveName));
@@ -95,7 +95,7 @@ const Absolver = () => {
     }
   }
 
-  function rowClick(moveName) {
+  const rowClick = (moveName) => {
     if (targetDeckType === 'barehands') {
       dispatch(updateBarehandsDeck(moveName));
     }
@@ -107,11 +107,11 @@ const Absolver = () => {
     }
   }
 
-  function changeDeckType(deckType) {
+  const changeDeckType = (deckType) => {
     dispatch(setTargetDeckType(deckType));
   }
 
-  function goBack() {
+  const goBack = () => {
     if (activeMove !== 'none') {
       dispatch(setActiveMove('none'));
       dispatch(setTargetRow(-1));
@@ -119,7 +119,7 @@ const Absolver = () => {
     }
   }
 
-  function sidebarToggle() {
+  const sidebarToggle = () => {
     dispatch(toggleSidebar());
   }
   return (
