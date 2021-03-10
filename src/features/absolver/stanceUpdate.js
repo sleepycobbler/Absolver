@@ -1,15 +1,5 @@
 import * as data from './Moves';
 
-/**
- * All logic involved with updating the stances.
- * @name stanceUpdate
- * @param {Array[Array[int]]} stances - The current stance state.
- * @param {Array[Array[string]]} moves - The updated move state.
- * @param {string} decktype - the current decktype
- * @returns {Array[Array[int]]} - The new stance state according to the move state.
- * @author Max Schuhmacher <sleepycobbler@gmail.com>
- */
-
 const mergeStance = (stanDict) => {
   if (Object.keys(stanDict).length > 1) {
     var stan1 = Number(Object.keys(stanDict)[0])
@@ -50,6 +40,15 @@ const mergeStance = (stanDict) => {
     return [stan1, stan2, stan1, stan2];
   }
 }
+
+/**
+ * All logic involved with updating the stances.
+ * @param {Array.<Array.<int>>} stances - The current stance state.
+ * @param {Array.<Array.<string>>} moves - The updated move state.
+ * @param {string} decktype - the current decktype
+ * @returns {Array.<Array.<int>>} - The new stance state according to the move state.
+ * @author Max Schuhmacher <sleepycobbler@gmail.com>
+ */
 
 const updateStances = (stances, moves, decktype) => {
   var moveData = data.getBareHands();

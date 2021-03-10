@@ -1,7 +1,6 @@
 /**
  * The header of the Web application.
- * @name Header
- * @const
+ * @component
  * @param {function} onClick - the event that opens the sidebar.
  * @param {function} onGoBack - the event that hides or displays the Go Back button.
  * @param {string} activeMove - The currently selected move. 'none' if no move is selected. 

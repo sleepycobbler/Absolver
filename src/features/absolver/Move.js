@@ -2,7 +2,7 @@ import * as data from './Moves';
 
 /**
  * Represents a single move, displaying quick statistics and the picture.
- * @name Move
+ * @component
  * @param {int} row - The current row number.
  * @param {int} column - The current column number.
  * @param {string} moveName - The name of the current move.

@@ -37,15 +37,15 @@ import {
 } from './slices/loadoutSlice'
 
 /**
- * Represents he main application function. The entirety of the app 
+ * Represents the main application function. The entirety of the app 
  * is constructed from here.
- * @name Absolver
+ * @component
  * @returns A sidebar component, and a div tag containing these 
  * components: Header, Deckbuilder/Movechooser, Footer
  * @author Max Schuhmahcer <sleepycobbler@gmail.com>
  */
 
-export function Absolver(){
+export const Absolver = () => {
   var row = useSelector(selectTargetRow);
   var column = useSelector(selectTargetColumn);
   // var powers = useSelector(selectPowers);

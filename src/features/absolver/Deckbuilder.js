@@ -3,12 +3,11 @@ import Deckrow from './Deckrow';
 
 /**
  * The deckbuilder is the main view of a given deck. It displays 4 Deckrow components, which form a 4x4 grid of moves.
- * @name Deckbuilder
- * @const
+ * @component
  * @param {function} moveClick - Click event that sets target row and column. 
  * @param {function} moveDelete - Click event that removes current move data from a target row and column
- * @param {Array[string]} deckArray - An array of move rows.
- * @param {Array[int]} stances - An array of stance positions.
+ * @param {Array.<string>} deckArray - An array of move rows.
+ * @param {Array.<int>} stances - An array of stance positions.
  * @returns A div with 4 Deckrow components
  * @author Max Schuhmacher <sleepycobbler@gmail.com>
  */

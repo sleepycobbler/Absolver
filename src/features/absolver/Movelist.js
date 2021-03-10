@@ -5,12 +5,12 @@ import React from 'react';
 
 /**
  * Creates a list of moves in column form
- * @name Movelist
+ * @component
  * @param {string} deckType - The current type of deck (barehands, wargloves, or sword)
  * @param {int} column - The current target column number.
  * @param {int} row - The current target row number.
- * @param {Array[Array[string]]} usedMoves - The current moves within the deck.
- * @param {Array[int]} stances - The stances for the current row.
+ * @param {Array.<Array.<string>>} usedMoves - The current moves within the deck.
+ * @param {Array.<int>} stances - The stances for the current row.
  * @param {function} rowClick - The event that triggers when a row within the list is clicked on.
  * @returns A div with a movebar component, and a table listing all moves available.
  * @author Max Schuhmacher <sleepycobbler@gmail.com>

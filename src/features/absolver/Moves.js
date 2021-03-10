@@ -1,7 +1,5 @@
 /**
  * The current moves and their corresponding data within the game absolver, according to dev-released data.
- * @name data
- * @const
  * @returns {dictionary}
  * @author Max Schuhmacher <sleepycobbler@gmail.com>
  */

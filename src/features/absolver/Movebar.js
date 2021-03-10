@@ -2,6 +2,7 @@ import React from 'react';
 
 /**
  * This is the representation of the bar at the top of the list of moves.
+ * @component
  * @returns A div containing 2 divs
  * @todo Implement this section
  */

@@ -1,7 +1,6 @@
 /**
  * The footer of the web application
- * @name Footer
- * @const
+ * @component
  * @returns A div containing three <a> tags, each containing a <p> tag.
  * @author Max Schuhmacher <sleepycobbler@gmail.com>
  */

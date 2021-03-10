@@ -2,12 +2,11 @@ import * as data from './Moves';
 
 /**
  * A function to filter moves based on deck type, column, stances, and used moves.
- * @name filterMoves
  * @param {string} deckType - The current type of deck (barehands, wargloves, or sword)
  * @param {int} column - The current target column number.
- * @param {Array[int]} stances - The current stances within the row.
- * @param {Array[string]} usedMoves - A list of the moves that are already selected.
- * @returns {Array[string]} An array of filtered move names.
+ * @param {Array.<int>} stances - The current stances within the row.
+ * @param {Array.<string>} usedMoves - A list of the moves that are already selected.
+ * @returns {Array.<string>} An array of filtered move names.
  * @author Max Schuhmacher <sleepycobbler@gmail.com>
  */
 

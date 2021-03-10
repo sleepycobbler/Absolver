@@ -2,7 +2,7 @@
 
 /**
  * A representation of the sidebar element, that allows switching between decktypes
- * @name Sidebar
+ * @component
  * @param {bool} active - Says whether the sidebar is displayed or not
  * @param {function} onClick - The event that closes the sidebar.
  * @param {function} deckChange - The event that changes deck type.

@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> features/absolver/filter.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">My React components</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#Absolver">Absolver</a></li><li><a href="global.html#AbsolverApp">AbsolverApp</a></li><li><a href="global.html#Alt">Alt</a></li><li><a href="global.html#Combo">Combo</a></li><li><a href="global.html#Deckbuilder">Deckbuilder</a></li><li><a href="global.html#Deckrow">Deckrow</a></li><li><a href="global.html#filterMoves">filterMoves</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#getBareHands">getBareHands</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#loadoutSlice">loadoutSlice</a></li><li><a href="global.html#mergeStance">mergeStance</a></li><li><a href="global.html#Move">Move</a></li><li><a href="global.html#Movebar">Movebar</a></li><li><a href="global.html#Movechooser">Movechooser</a></li><li><a href="global.html#Sidebar">Sidebar</a></li><li><a href="global.html#updateStances">updateStances</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>features/absolver/filter.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import * as data from './Moves';
+
+/**
+ * A function to filter moves based on deck type, column, stances, and used moves.
+ * @param {string} deckType - The current type of deck (barehands, wargloves, or sword)
+ * @param {int} column - The current target column number.
+ * @param {Array.&lt;int>} stances - The current stances within the row.
+ * @param {Array.&lt;string>} usedMoves - A list of the moves that are already selected.
+ * @returns {Array.&lt;string>} An array of filtered move names.
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const filterMoves = (
+  usedMoves, 
+  deckType, 
+  column, 
+  stances
+) => {
+  var movesDeckType = deckType === 'sword' ? 'sword' : 'barehands';
+  var stance1;
+  var stance2;
+  var stanceAlt;
+
+  switch (column) {
+    case 0:
+      stance1 = stances[0];
+      stance2 = stances[1];
+      break;
+    case 1:
+      stance1 = stances[1];
+      stance2 = stances[2];
+      stanceAlt = stances[3];
+      break;
+    case 2:
+      stanceAlt = stances[1];
+      stance1 = stances[2];
+      stance2 = stances[3];
+      break;
+    case 3:
+      stance1 = stances[4];
+      stance2 = stances[5];
+      break;
+    default:
+      break;
+  }
+  var moveData = data.getBareHands()
+  if (movesDeckType === 'sword') {
+    moveData = moveData.filter(x => x['stance']['sword'] !== false)
+    moveData = moveData.concat(data.getSword())
+  }
+  if (stance1 > 3 &amp;&amp; stance2 > 3) {
+    if (column === 1 &amp;&amp; stanceAlt > 3) {
+      switch (stance2) {
+        case 4:
+        case 5:
+          moveData = moveData.filter(
+            x => Object.values(x['stance'][movesDeckType]).includes(0) ||
+                 Object.values(x['stance'][movesDeckType]).includes(1)
+          );
+          break;
+        case 6:
+        case 7:
+          moveData = moveData.filter(
+            x => Object.values(x['stance'][movesDeckType]).includes(2) ||
+                 Object.values(x['stance'][movesDeckType]).includes(3)
+          );
+          break;
+        default:
+          break;
+      }
+    } else if (column === 2 &amp;&amp; stanceAlt > 3) {
+      switch (stance1) {
+        case 4:
+        case 5:
+          moveData = moveData.filter(
+            x => Object.keys(x['stance'][movesDeckType]).includes('0') ||
+                 Object.keys(x['stance'][movesDeckType]).includes('1')
+          );
+          break;
+        case 6:
+        case 7:
+          moveData = moveData.filter(
+            x => Object.keys(x['stance'][movesDeckType]).includes('2') ||
+                 Object.keys(x['stance'][movesDeckType]).includes('3')
+          );
+          break;
+        default:
+          break;
+      }
+    }
+  } else if (stance1 > 3) {
+    switch (stance1) {
+      case 4:
+      case 5:
+        moveData = moveData.filter(
+          x => Object.keys(x['stance'][movesDeckType]).includes('0') ||
+               Object.keys(x['stance'][movesDeckType]).includes('1')
+        );
+        break;
+      case 6:
+      case 7:
+        moveData = moveData.filter(
+          x => Object.keys(x['stance'][movesDeckType]).includes('2') ||
+               Object.keys(x['stance'][movesDeckType]).includes('3')
+        );
+        break;
+      default:
+        break;
+    }
+  } else if (stance2 > 3 &amp;&amp; stance1 > -1) {
+    switch (stance2) {
+      case 4:
+      case 5:
+        moveData = moveData.filter(
+          x => Object.values(x['stance'][movesDeckType]).includes(0) ||
+               Object.values(x['stance'][movesDeckType]).includes(1)
+        );
+        break;
+      case 6:
+      case 7:
+        moveData = moveData.filter(
+          x => Object.values(x['stance'][movesDeckType]).includes(2) ||
+               Object.values(x['stance'][movesDeckType]).includes(3)
+        );
+        break;
+      default:
+        break;
+    }
+    moveData = moveData.filter(
+      x => Object.keys(x['stance'][movesDeckType]).includes(stance1.toString())
+    );
+  } else if (stance2 > 3) {
+    switch (stance2) {
+      case 4:
+      case 5:
+        moveData = moveData.filter(
+          x => Object.values(x['stance'][movesDeckType]).includes(0) ||
+               Object.values(x['stance'][movesDeckType]).includes(1)
+        );
+        break;
+      case 6:
+      case 7:
+        moveData = moveData.filter(
+          x => Object.values(x['stance'][movesDeckType]).includes(2) ||
+               Object.values(x['stance'][movesDeckType]).includes(3)
+        );
+        break;
+      default:
+        break;
+    }
+  } else if (column === 3) {
+    moveData = moveData.filter(
+      x => Object.keys(x['stance'][movesDeckType]).includes(stance1.toString())
+    );
+    moveData = moveData.filter(
+      x => x['stance'][movesDeckType][stance1] !== stance1
+    );
+  } else {
+    if (stance1 > -1) {
+      moveData = moveData.filter(
+        x => Object.keys(x['stance'][movesDeckType]).includes(stance1.toString())
+      );
+    }
+    if (stance2 > -1) {
+      moveData = moveData.filter(
+        x => Object.values(x['stance'][movesDeckType]).includes(stance2)
+      );
+    }
+  }
+
+  for (var row of usedMoves) {
+    for (var usedMove of row) {
+      moveData = moveData.filter(
+        x => x['name'] !== usedMove
+      );
+    }
+  }
+
+  return moveData;
+}
+
+export default filterMoves;</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

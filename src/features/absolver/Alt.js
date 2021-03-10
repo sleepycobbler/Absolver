@@ -3,9 +3,8 @@ import Move from './Move';
 
 /**
  * This section represents the structure for an Alternative move, or 'Alt' for short.
- * @name Alt
- * @const
- * @param {Array[int]} stances - The array of stances for the row of moves. 
+ * @component
+ * @param {Array.<int>} stances - The array of stances for the row of moves. 
  * @param {int} row - The row index number
  * @param {string} moveName - The name of the move.
  * @param {function} moveClick - The function to be triggered once the move is clicked.

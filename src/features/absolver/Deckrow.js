@@ -3,11 +3,10 @@ import Alt from './Alt';
 
 /**
  * A deckrow symbolizes a single row within the Deckbuilder. It contains a combo, and an alt component.
- * @name Deckrow
- * @const
- * @param {Array[int]} stances - An array of stance positions.
+ * @component
+ * @param {Array.<int>} stances - An array of stance positions.
  * @param {int} row - The row number.
- * @param {Array[string]} rowState - An array of move names.
+ * @param {Array.<string>} rowState - An array of move names.
  * @param {function} moveClick - Click event that sets target row and column. 
  * @param {function} moveDelete - Click event that removes current move data from a target row and column.
  * @returns A div containing a Combo and Alt component.
