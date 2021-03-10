@@ -3,9 +3,9 @@ import './Plain.css';
 import './App.css';
 import './Absolver.css';
 import './stance.css';
-import Absolver from './features/absolver/Absolver.js';
+import Absolver from './features/absolver/Absolver';
 
-function App() {
+const App = () => {
   return (
     <Absolver />
   );

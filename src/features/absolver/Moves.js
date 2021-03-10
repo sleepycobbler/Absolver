@@ -1,4 +1,12 @@
-export function getBareHands() {
+/**
+ * The current moves and their corresponding data within the game absolver, according to dev-released data.
+ * @name data
+ * @const
+ * @returns {dictionary}
+ * @author Max Schuhmacher <sleepycobbler@gmail.com>
+ */
+
+export const getBareHands = () => {
     return (
         [{
             "name": "360 Tornado Kick",
@@ -3878,7 +3886,7 @@ export function getBareHands() {
     )
 }
 
-export function getSword() {
+export const getSword = () => {
     return (
         [{
             "name": "Arc Slash",

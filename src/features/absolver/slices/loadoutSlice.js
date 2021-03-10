@@ -4,6 +4,10 @@ import {
 import * as data from '../Moves.js';
 import updateStances from '../stanceUpdate.js'
 
+/**
+ * This is a Redux slice, containing the complete state of the web app.
+ */
+
 export const loadoutSlice = createSlice({
   name: 'loadout',
   initialState: {
@@ -64,10 +68,12 @@ export const loadoutSlice = createSlice({
             state.targetDeckType = action.payload;
             state.stanceDiamonds = updateStances(state.stanceDiamonds, state.swordCurrent[state.swordCurrent.length - 1], action.payload);
             break;
+          default:
+            break;
         }
         state.targetDeckType = action.payload;
       } else {
-        throw 'Submitted value not a valid deck type.';
+        throw new Error('Submitted value not a valid deck type.');
       }
     },
     setPowers: (state, action) => {
@@ -91,7 +97,7 @@ export const loadoutSlice = createSlice({
         ].includes(payload)) {
         state.style = payload
       } else {
-        throw 'Submitted string not a valid style.';
+        throw new Error('Submitted string not a valid style.');
       }
     },
     updateBarehandsDeck: (state, action) => {
@@ -119,6 +125,8 @@ export const loadoutSlice = createSlice({
                 state.swordCurrent[state.swordCurrent.length - 1][i][j] = '+';
                 state.stanceDiamonds = updateStances(state.stanceDiamonds, state.swordCurrent[state.swordCurrent.length - 1], state.targetDeckType);
               }
+              break;
+            default:
               break;
           }
         }
@@ -149,14 +157,14 @@ export const loadoutSlice = createSlice({
       if ([-1, 0, 1, 2, 3].includes(action.payload)) {
         state.targetRow = action.payload;
       } else {
-        throw 'Row target contains invalid value.';
+        throw new Error('Row target contains invalid value.');
       }
     },
     setTargetColumn: (state, action) => {
       if ([-1, 0, 1, 2, 3].includes(action.payload)) {
         state.targetColumn = action.payload;
       } else {
-        throw 'Column target contains invalid value.';
+        throw new Error('Column target contains invalid value.');
       }
     },
     setStanceDiamonds: (state, action) => {

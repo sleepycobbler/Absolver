@@ -1,6 +1,16 @@
-import * as data from './Moves.js';
+import * as data from './Moves';
 
-function mergeStance(stanDict) {
+/**
+ * All logic involved with updating the stances.
+ * @name stanceUpdate
+ * @param {Array[Array[int]]} stances - The current stance state.
+ * @param {Array[Array[string]]} moves - The updated move state.
+ * @param {string} decktype - the current decktype
+ * @returns {Array[Array[int]]} - The new stance state according to the move state.
+ * @author Max Schuhmacher <sleepycobbler@gmail.com>
+ */
+
+const mergeStance = (stanDict) => {
   if (Object.keys(stanDict).length > 1) {
     var stan1 = Number(Object.keys(stanDict)[0])
     var stan2 = Number(Object.keys(stanDict)[1])
@@ -31,15 +41,17 @@ function mergeStance(stanDict) {
       case '3210':
       case '2301':
         return [6, 5, 7, 4];
+      default:
+        break;
     }
   } else {
-    var stan1 = Number(Object.keys(stanDict)[0])
-    var stan2 = Number(Object.values(stanDict)[0])
+    stan1 = Number(Object.keys(stanDict)[0])
+    stan2 = Number(Object.values(stanDict)[0])
     return [stan1, stan2, stan1, stan2];
   }
 }
 
-function updateStances(stances, moves, decktype) {
+const updateStances = (stances, moves, decktype) => {
   var moveData = data.getBareHands();
   var moveSet = 'barehands'
   if (decktype === 'sword') {
@@ -50,7 +62,7 @@ function updateStances(stances, moves, decktype) {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
       if (moves[i][j] !== '+') {
-        var moveStances = moveData.find(x => x['name'] == moves[i][j])['stance'][moveSet];
+        var moveStances = moveData.find(x => x['name'] === moves[i][j])['stance'][moveSet];
         let b4Move = moves[i][j - 1];
         let nxMove = moves[i][j + 1];
         let doublesStances = mergeStance(moveStances);
@@ -65,12 +77,12 @@ function updateStances(stances, moves, decktype) {
             } else if (b4Move !== '+') {
               stances[i][2] = moveStances[stances[i][1]];
             } else if (nxMove !== '+') {
-              stances[i][1] = doublesStances[0];
-              if (stances[i][2] < 4) {
-                stances[i][2] = moveStances[stances[i][1]];
-              } else {
-                stances[i][2] = doublesStances[1];
-              }
+                stances[i][1] = doublesStances[0];
+                if (stances[i][2] < 4) {
+                  stances[i][2] = moveStances[stances[i][1]];
+                } else {
+                  stances[i][2] = doublesStances[1];
+                }
             } else {
               stances[i][2] = moveStances[stances[i][1]];
             }
@@ -91,7 +103,9 @@ function updateStances(stances, moves, decktype) {
           case 3:
             stances[i][5] = moveStances[i];
             break;
-        }
+          default:
+            break;
+          }
       } else {
         switch (j) {
           case 0:
@@ -112,6 +126,8 @@ function updateStances(stances, moves, decktype) {
             break;
           case 3:
             stances[i][5] = -1;
+            break;
+          default:
             break;
         }
       }
