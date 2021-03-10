@@ -45,7 +45,7 @@ import {
  * @author Max Schuhmahcer <sleepycobbler@gmail.com>
  */
 
-export const Absolver = () => {
+const Absolver = () => {
   var row = useSelector(selectTargetRow);
   var column = useSelector(selectTargetColumn);
   // var powers = useSelector(selectPowers);

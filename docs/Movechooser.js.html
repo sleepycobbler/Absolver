@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> Movechooser.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,48 +79,59 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>Movechooser.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h2>Absolver Deck Builder</h2>
-<p>This project is a Combat Deck Builder for the video game Absolver. It aims to be a mobile-friendly, informative, and useful tool for creating decks. Tips and tricks are referenced in the sidebar, and other informative tooltips appear.</p>
-<p>To learn more, visit the Absolver reddit: https://www.reddit.com/r/absolver/</p>
-<h2>Default Template Text</h2>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>, using the <a href="https://redux.js.org/">Redux</a> and <a href="https://redux-toolkit.js.org/">Redux Toolkit</a> template.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>yarn start</code></h3>
-<p>Runs the app in the development mode.<br />
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
-<p>The page will reload if you make edits.<br />
-You will also see any lint errors in the console.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import Movelist from './Movelist';
+import Combo from './Combo';
+import Alt from './Alt';
+
+/**
+ * A representation of the interface that the deckbuilder goes into when a move slot is selected.
+ * @component
+ * @param {int}        column - The current column number.
+ * @param {int}        row - The current row number.
+ * @param {Array.&lt;int>} stances - The current list of stance direction values. 
+ * @param {Array.&lt;Array.&lt;string>>} deckArray - The list of moves in a 4x4 grid.
+ * @param {function} moveClick - The event that triggers when a move is clicked.
+ * @param {function} rowClick - The event that switches the current row focus.
+ * @param {function} moveDelete - The event that wipes the move name from the current row and column position
+ * @param {string}   deckType - The current deck type (either barehands, wargloves, or sword)
+ * @returns A div that contains either a combo or alt component, along with a Movelist component
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const Movechooser = ({
+  column,
+  stances,
+  row,
+  deckArray,
+  moveClick,
+  rowClick,
+  moveDelete,
+  deckType,
+}) => (
+  &lt;div className="Absolver-movechooser">
+      {
+        (column &lt; 3) ? 
+          &lt;Combo stances={stances[row]} row={row} rowState={deckArray[row] } moveClick={moveClick} moveDelete={moveDelete} /> :
+          &lt;Alt stances={stances[row]} row={row} moveName={deckArray[row][column]} moveClick={moveClick} moveDelete={moveDelete} />
+      }
+      &lt;Movelist usedMoves={deckArray} stances={stances[row]} row={row} column={column} deckType={deckType} rowClick={rowClick} />
+  &lt;/div>
+);
+
+export default Movechooser;</code></pre>
+        </article>
     </section>
-
-
 
 
 

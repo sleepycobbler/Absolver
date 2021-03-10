@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> stanceUpdate.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">My React components</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Components</h3><ul><li><a href="Absolver.html">Absolver</a></li><li><a href="Alt.html">Alt</a></li><li><a href="Combo.html">Combo</a></li><li><a href="Deckbuilder.html">Deckbuilder</a></li><li><a href="Deckrow.html">Deckrow</a></li><li><a href="Footer.html">Footer</a></li><li><a href="Header.html">Header</a></li><li><a href="mergeStance.html">mergeStance</a></li><li><a href="Move.html">Move</a></li><li><a href="Movebar.html">Movebar</a></li><li><a href="Movechooser.html">Movechooser</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="Stance.html">Stance</a></li></ul><h3>Global</h3><ul><li><a href="global.html#filterMoves">filterMoves</a></li><li><a href="global.html#loadoutSlice">loadoutSlice</a></li><li><a href="global.html#updateStances">updateStances</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>stanceUpdate.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import * as data from './Moves';
+
+const mergeStance = (stanDict) => {
+  if (Object.keys(stanDict).length > 1) {
+    var stan1 = Number(Object.keys(stanDict)[0])
+    var stan2 = Number(Object.keys(stanDict)[1])
+    var stan3 = Number(Object.values(stanDict)[0])
+    var stan4 = Number(Object.values(stanDict)[1])
+    switch ([stan1, stan2, stan3, stan4].join('')) {
+      case '0110':
+      case '1001':
+        return [4, 5, 5, 4];
+      case '0101':
+      case '1010':
+        return [4, 4, 5, 5];
+      case '0132':
+      case '1023':
+        return [4, 6, 5, 7];
+      case '0123':
+      case '1032':
+        return [4, 7, 5, 6];
+      case '3232':
+      case '2323':
+        return [6, 6, 7, 7];
+      case '3223':
+      case '2332':
+        return [6, 7, 7, 6];
+      case '3201':
+      case '2310':
+        return [6, 4, 7, 5];
+      case '3210':
+      case '2301':
+        return [6, 5, 7, 4];
+      default:
+        break;
+    }
+  } else {
+    stan1 = Number(Object.keys(stanDict)[0])
+    stan2 = Number(Object.values(stanDict)[0])
+    return [stan1, stan2, stan1, stan2];
+  }
+}
+
+/**
+ * All logic involved with updating the stances.
+ * @param {Array.&lt;Array.&lt;int>>} stances - The current stance state.
+ * @param {Array.&lt;Array.&lt;string>>} moves - The updated move state.
+ * @param {string} decktype - the current decktype
+ * @returns {Array.&lt;Array.&lt;int>>} - The new stance state according to the move state.
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const updateStances = (stances, moves, decktype) => {
+  var moveData = data.getBareHands();
+  var moveSet = 'barehands'
+  if (decktype === 'sword') {
+    moveData = moveData.filter(x => x['stance']['sword'] !== false);
+    moveData = moveData.concat(data.getSword());
+    moveSet = 'sword';
+  }
+  for (let i = 0; i &lt; 4; i++) {
+    for (let j = 0; j &lt; 4; j++) {
+      if (moves[i][j] !== '+') {
+        var moveStances = moveData.find(x => x['name'] === moves[i][j])['stance'][moveSet];
+        let b4Move = moves[i][j - 1];
+        let nxMove = moves[i][j + 1];
+        let doublesStances = mergeStance(moveStances);
+        switch (j) {
+          case 0:
+            stances[i][1] = moveStances[i];
+            break;
+          case 1:
+            if (b4Move === '+' &amp;&amp; nxMove === '+') {
+              stances[i][1] = doublesStances[0];
+              stances[i][2] = doublesStances[1];
+            } else if (b4Move !== '+') {
+              stances[i][2] = moveStances[stances[i][1]];
+            } else if (nxMove !== '+') {
+                stances[i][1] = doublesStances[0];
+                if (stances[i][2] &lt; 4) {
+                  stances[i][2] = moveStances[stances[i][1]];
+                } else {
+                  stances[i][2] = doublesStances[1];
+                }
+            } else {
+              stances[i][2] = moveStances[stances[i][1]];
+            }
+            break;
+          case 2:
+            if (b4Move === '+' &amp;&amp; moves[i][0] === '+') {
+              stances[i][2] = doublesStances[0];
+              stances[i][3] = doublesStances[1];
+            } else if (b4Move === '+') {
+              stances[i][2] = doublesStances[0];
+              stances[i][3] = doublesStances[1];
+            } else if (stances[i][2] > 3) {
+              stances[i][3] = doublesStances[1];
+            } else {
+              stances[i][3] = moveStances[stances[i][2]];
+            }
+            break;
+          case 3:
+            stances[i][5] = moveStances[i];
+            break;
+          default:
+            break;
+          }
+      } else {
+        switch (j) {
+          case 0:
+            if (moves[i][j + 1] === '+') {
+              stances[i][1] = -1;
+            }
+            break;
+          case 1:
+            if (moves[i][j + 1] === '+') {
+              stances[i][2] = -1;
+            }
+            if (moves[i][j - 1] === '+') {
+              stances[i][1] = -1;
+            }
+            break;
+          case 2:
+            stances[i][3] = -1;
+            break;
+          case 3:
+            stances[i][5] = -1;
+            break;
+          default:
+            break;
+        }
+      }
+    }
+  }
+
+  return stances;
+}
+
+export default updateStances;</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

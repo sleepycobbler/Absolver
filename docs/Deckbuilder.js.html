@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> Deckbuilder.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,48 +79,50 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>Deckbuilder.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h2>Absolver Deck Builder</h2>
-<p>This project is a Combat Deck Builder for the video game Absolver. It aims to be a mobile-friendly, informative, and useful tool for creating decks. Tips and tricks are referenced in the sidebar, and other informative tooltips appear.</p>
-<p>To learn more, visit the Absolver reddit: https://www.reddit.com/r/absolver/</p>
-<h2>Default Template Text</h2>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>, using the <a href="https://redux.js.org/">Redux</a> and <a href="https://redux-toolkit.js.org/">Redux Toolkit</a> template.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>yarn start</code></h3>
-<p>Runs the app in the development mode.<br />
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
-<p>The page will reload if you make edits.<br />
-You will also see any lint errors in the console.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import Deckrow from './Deckrow';
+
+/**
+ * The deckbuilder is the main view of a given deck. It displays 4 Deckrow components, which form a 4x4 grid of moves.
+ * @component
+ * @param {function} moveClick - Click event that sets target row and column. 
+ * @param {function} moveDelete - Click event that removes current move data from a target row and column
+ * @param {Array.&lt;string>} deckArray - An array of move rows.
+ * @param {Array.&lt;int>} stances - An array of stance positions.
+ * @returns A div with 4 Deckrow components
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const Deckbuilder = ({
+  stances,
+  row,
+  deckArray,
+  moveClick,
+  moveDelete,
+}) => (
+  &lt;div className="Absolver-deckbuilder">
+    &lt;Deckrow stances={stances[0]} row={0} rowState={deckArray[0]} moveClick={moveClick} moveDelete={moveDelete} />
+    &lt;Deckrow stances={stances[1]} row={1} rowState={deckArray[1]} moveClick={moveClick} moveDelete={moveDelete} />
+    &lt;Deckrow stances={stances[2]} row={2} rowState={deckArray[2]} moveClick={moveClick} moveDelete={moveDelete} />
+    &lt;Deckrow stances={stances[3]} row={3} rowState={deckArray[3]} moveClick={moveClick} moveDelete={moveDelete} />
+  &lt;/div>
+);
+
+
+
+export default Deckbuilder;</code></pre>
+        </article>
     </section>
-
-
 
 
 

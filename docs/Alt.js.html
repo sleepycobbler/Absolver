@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> Alt.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,48 +79,48 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>Alt.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h2>Absolver Deck Builder</h2>
-<p>This project is a Combat Deck Builder for the video game Absolver. It aims to be a mobile-friendly, informative, and useful tool for creating decks. Tips and tricks are referenced in the sidebar, and other informative tooltips appear.</p>
-<p>To learn more, visit the Absolver reddit: https://www.reddit.com/r/absolver/</p>
-<h2>Default Template Text</h2>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>, using the <a href="https://redux.js.org/">Redux</a> and <a href="https://redux-toolkit.js.org/">Redux Toolkit</a> template.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>yarn start</code></h3>
-<p>Runs the app in the development mode.<br />
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
-<p>The page will reload if you make edits.<br />
-You will also see any lint errors in the console.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Stance from './Stance';
+import Move from './Move';
+
+/**
+ * This section represents the structure for an Alternative move, or 'Alt' for short.
+ * @component
+ * @param {Array.&lt;int>} stances - The array of stances for the row of moves. 
+ * @param {int} row - The row index number
+ * @param {string} moveName - The name of the move.
+ * @param {function} moveClick - The function to be triggered once the move is clicked.
+ * @param {function} moveDelete - The function to be called once the delete action is selected. 
+ * @returns A div containing a stance, a move, and another stance.
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const Alt = ({
+  stances,
+  row,
+  moveName,
+  moveClick,
+  moveDelete,
+}) => (
+  &lt;div className="Absolver-altmove">
+      &lt;Stance dir={stances[4]} />
+      &lt;Move row={row} column={3} moveName={moveName} moveClick={moveClick} moveDelete={moveDelete} />
+      &lt;Stance dir={stances[5]} />
+  &lt;/div>
+)
+
+export default Alt;</code></pre>
+        </article>
     </section>
-
-
 
 
 

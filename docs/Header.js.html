@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> Header.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,48 +79,45 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>Header.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h2>Absolver Deck Builder</h2>
-<p>This project is a Combat Deck Builder for the video game Absolver. It aims to be a mobile-friendly, informative, and useful tool for creating decks. Tips and tricks are referenced in the sidebar, and other informative tooltips appear.</p>
-<p>To learn more, visit the Absolver reddit: https://www.reddit.com/r/absolver/</p>
-<h2>Default Template Text</h2>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>, using the <a href="https://redux.js.org/">Redux</a> and <a href="https://redux-toolkit.js.org/">Redux Toolkit</a> template.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>yarn start</code></h3>
-<p>Runs the app in the development mode.<br />
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
-<p>The page will reload if you make edits.<br />
-You will also see any lint errors in the console.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * The header of the Web application.
+ * @component
+ * @param {function} onClick - the event that opens the sidebar.
+ * @param {function} onGoBack - the event that hides or displays the Go Back button.
+ * @param {string} activeMove - The currently selected move. 'none' if no move is selected. 
+ * @returns A div with either 1 or 2 span tags, and then an h1 tag.
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const Header = ({
+  onClick,
+  onGoBack,
+  activeMove,
+}) => (
+  &lt;div className="Absolver-header">
+    &lt;span className="Absolver-sidebar-open" onClick={() => onClick()}>&amp;#9776;&lt;/span>
+    {
+      activeMove === 'none' ? 
+        "" : 
+        &lt;span className='Absolver-sidebar-open' onClick={() => onGoBack()}>Back to Deckview&lt;/span> 
+    }
+    &lt;h1>Absolver Deckbuilder&lt;/h1>
+  &lt;/div>
+)
+
+export default Header;</code></pre>
+        </article>
     </section>
-
-
 
 
 

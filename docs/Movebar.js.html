@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home</title>
+  <title> Movebar.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,48 +79,37 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p></p>
-                    <h1>Home</h1>
+                    <p>Source</p>
+                    <h1>Movebar.js</h1>
                 </header>
                 
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h2>Absolver Deck Builder</h2>
-<p>This project is a Combat Deck Builder for the video game Absolver. It aims to be a mobile-friendly, informative, and useful tool for creating decks. Tips and tricks are referenced in the sidebar, and other informative tooltips appear.</p>
-<p>To learn more, visit the Absolver reddit: https://www.reddit.com/r/absolver/</p>
-<h2>Default Template Text</h2>
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>, using the <a href="https://redux.js.org/">Redux</a> and <a href="https://redux-toolkit.js.org/">Redux Toolkit</a> template.</p>
-<h2>Available Scripts</h2>
-<p>In the project directory, you can run:</p>
-<h3><code>yarn start</code></h3>
-<p>Runs the app in the development mode.<br />
-Open <a href="http://localhost:3000">http://localhost:3000</a> to view it in the browser.</p>
-<p>The page will reload if you make edits.<br />
-You will also see any lint errors in the console.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+
+/**
+ * This is the representation of the bar at the top of the list of moves.
+ * @component
+ * @returns A div containing 2 divs
+ * @todo Implement this section
+ */
+
+const Movebar = () => {
+  return (
+    &lt;div className="Absolver-movebar">
+        &lt;div className='filter'>Filters&lt;/div>
+        &lt;div className='searchBar'>&lt;input type="text" placeholder="Search.." name="search" />&lt;/div>
+    &lt;/div>
+  )
+}
+
+export default Movebar;</code></pre>
+        </article>
     </section>
-
-
 
 
 

@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Global</title>
+  <title> Sidebar</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,8 +77,8 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Title</p>
-                    <h1>Global</h1>
+                    <p>Components</p>
+                    <h1>Sidebar</h1>
                 </header>
                 
 
@@ -89,7 +89,9 @@
 
 <header>
     
-        <h2></h2>
+        <h2>
+            &ltSidebar  /&gt
+        </h2>
         
     
 </header>
@@ -98,158 +100,22 @@
     <div class="container-overview">
     
         
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Members</h1>
-            <div class="members">
-            
-                <div class="member">
-
-<h4 class="name" id="loadoutSlice">
-    <a class="href-link" href="#loadoutSlice">#</a>
-    
-        
-            <span class='tag'>constant</span>
-        
-    
-    <span class="code-name">
-        loadoutSlice
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    This is a Redux slice, containing the complete state of the web app.
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="slices_loadoutSlice.js.html" class="button">View Source</a>
-            <span>
-                <a href="slices_loadoutSlice.js.html">slices/loadoutSlice.js</a>, <a href="slices_loadoutSlice.js.html#line11">line 11</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Methods</h1>
-            <div class="members">
-            
-                <div class="member">
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
 
 
     
-    <h4 class="name" id="filterMoves">
-        <a class="href-link" href="#filterMoves">#</a>
+    <h4 class="name" id="Sidebar">
+        <a class="href-link" href="#Sidebar">#</a>
         
         <span class="code-name">
             
-                filterMoves<span class="signature">(deckType, column, stances, usedMoves)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span>
+                &ltSidebar  /&gt
             
         </span>
     </h4>
@@ -258,7 +124,7 @@
     
     
     <div class="description">
-        A function to filter moves based on deck type, column, stances, and used moves.
+        A representation of the sidebar element, that allows switching between decktypes
     </div>
     
 
@@ -267,6 +133,8 @@
 
 
 
+
+    
 
 
 
@@ -296,13 +164,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>deckType</code></td>
+      <td class="name"><code>active</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">string</span>
+<span class="param-type">bool</span>
 
 
   
@@ -312,7 +180,7 @@
 
   
 
-  <td class="description last">The current type of deck (barehands, wargloves, or sword)</td>
+  <td class="description last">Says whether the sidebar is displayed or not</td>
 </tr>
 
 
@@ -321,13 +189,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>column</code></td>
+      <td class="name"><code>onClick</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">int</span>
+<span class="param-type">function</span>
 
 
   
@@ -337,7 +205,7 @@
 
   
 
-  <td class="description last">The current target column number.</td>
+  <td class="description last">The event that closes the sidebar.</td>
 </tr>
 
 
@@ -346,13 +214,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>stances</code></td>
+      <td class="name"><code>deckChange</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">Array.&lt;int></span>
+<span class="param-type">function</span>
 
 
   
@@ -362,32 +230,7 @@
 
   
 
-  <td class="description last">The current stances within the row.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>usedMoves</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;string></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">A list of the moves that are already selected.</td>
+  <td class="description last">The event that changes deck type.</td>
 </tr>
 
 
@@ -440,9 +283,9 @@
 
     
         <p class="tag-source">
-            <a href="filter.js.html" class="button">View Source</a>
+            <a href="Sidebar.js.html" class="button">View Source</a>
             <span>
-                <a href="filter.js.html">filter.js</a>, <a href="filter.js.html#line13">line 13</a>
+                <a href="Sidebar.js.html">Sidebar.js</a>, <a href="Sidebar.js.html#line13">line 13</a>
             </span>
         </p>
     
@@ -473,16 +316,8 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>An array of filtered move names.</div>
+    <div class='param-desc column is-7'>A div with 4 <a> tags.</div>
     
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Array.&lt;string></span>
-
-
-    </div>
     
 </div>
 
@@ -493,240 +328,30 @@
 
 
 
-</div>
-            
-                <div class="member">
 
-
-    
-    <h4 class="name" id="updateStances">
-        <a class="href-link" href="#updateStances">#</a>
-        
-        <span class="code-name">
-            
-                updateStances<span class="signature">(stances, moves, decktype)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;int>>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        All logic involved with updating the stances.
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-<div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>stances</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;Array.&lt;int>></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The current stance state.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>moves</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Array.&lt;Array.&lt;string>></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">The updated move state.</td>
-</tr>
-
-
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>decktype</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last">the current decktype</td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-author">Author:</dt>
-    <dd class="tag-author">
-        <ul>
-            <li><a href="mailto:sleepycobbler@gmail.com">Max Schuhmacher</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="stanceUpdate.js.html" class="button">View Source</a>
-            <span>
-                <a href="stanceUpdate.js.html">stanceUpdate.js</a>, <a href="stanceUpdate.js.html#line53">line 53</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'>- The new stance state according to the move state.</div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Array.&lt;Array.&lt;int>></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
+                    </div>
+                </div>
             </div>
-        </div>
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     

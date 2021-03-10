@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Movelist.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">My React components</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Components</h3><ul><li><a href="Absolver.html">Absolver</a></li><li><a href="Alt.html">Alt</a></li><li><a href="Combo.html">Combo</a></li><li><a href="Deckbuilder.html">Deckbuilder</a></li><li><a href="Deckrow.html">Deckrow</a></li><li><a href="Footer.html">Footer</a></li><li><a href="Header.html">Header</a></li><li><a href="mergeStance.html">mergeStance</a></li><li><a href="Move.html">Move</a></li><li><a href="Movebar.html">Movebar</a></li><li><a href="Movechooser.html">Movechooser</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="Stance.html">Stance</a></li></ul><h3>Global</h3><ul><li><a href="global.html#filterMoves">filterMoves</a></li><li><a href="global.html#loadoutSlice">loadoutSlice</a></li><li><a href="global.html#updateStances">updateStances</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>Movelist.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Movebar from './Movebar';
+import filterMoves from './filter'
+import Stance from './Stance';
+import React from 'react';
+
+/**
+ * Creates a list of moves in column form
+ * @component
+ * @param {string} deckType - The current type of deck (barehands, wargloves, or sword)
+ * @param {int} column - The current target column number.
+ * @param {int} row - The current target row number.
+ * @param {Array.&lt;Array.&lt;string>>} usedMoves - The current moves within the deck.
+ * @param {Array.&lt;int>} stances - The stances for the current row.
+ * @param {function} rowClick - The event that triggers when a row within the list is clicked on.
+ * @returns A div with a movebar component, and a table listing all moves available.
+ * @author Max Schuhmacher &lt;sleepycobbler@gmail.com>
+ */
+
+const mergeStance = (stanDict) => {
+  var stan1 = Number(Object.keys(stanDict)[0])
+  var stan2 = Number(Object.keys(stanDict)[1])
+  var stan3 = Number(Object.values(stanDict)[0])
+  var stan4 = Number(Object.values(stanDict)[1])
+  switch ([stan1, stan2, stan3, stan4].join('')) {
+    case '0110':
+    case '1001':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={4} />&lt;/td>
+          &lt;td>&lt;Stance dir={5} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '0101':
+    case '1010':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={4} />&lt;/td>
+          &lt;td>&lt;Stance dir={4} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '0132':
+    case '1023':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={4} />&lt;/td>
+          &lt;td>&lt;Stance dir={6} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '0123':
+    case '1032':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={4} />&lt;/td>
+          &lt;td>&lt;Stance dir={7} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '3232':
+    case '2323':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={6} />&lt;/td>
+          &lt;td>&lt;Stance dir={6} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '3223':
+    case '2332':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={6} />&lt;/td>
+          &lt;td>&lt;Stance dir={7} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '3201':
+    case '2310':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={6} />&lt;/td>
+          &lt;td>&lt;Stance dir={4} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    case '3210':
+    case '2301':
+      return (
+        &lt;React.Fragment>
+          &lt;td>&lt;Stance dir={6} />&lt;/td>
+          &lt;td>&lt;Stance dir={5} />&lt;/td>
+        &lt;/React.Fragment>
+      );
+    default:
+      break;
+  }
+  console.log(stanDict)
+}
+
+const Movelist = ({
+  usedMoves,
+  deckType,
+  rowClick,
+  row,
+  column,
+  stances,
+}) => {
+  var moveData = filterMoves(usedMoves, deckType, column, stances);
+  var movesDeckType = deckType==='sword' ?  'sword': 'barehands';
+
+  const moves = moveData.map(move => {
+    var myKeys = Object.keys(move['stance'][movesDeckType]);
+    return (
+      &lt;tr className={'rowMove'} key={move['name']} onClick={() => rowClick(move['name'], row, column, deckType)}>
+        &lt;td>{move['name']}&lt;/td>
+        &lt;td>{move['style']}&lt;/td>
+        &lt;td>{move['type']}&lt;/td>
+        &lt;td>{move['power']}&lt;/td>
+        &lt;td>{move['stats']['str']}&lt;/td>
+        &lt;td>{move['stats']['dex']}&lt;/td>
+        &lt;td>{move['stats']['mob']}&lt;/td>
+        &lt;td>{move['damage']}&lt;/td>
+        &lt;td>{move['range']}&lt;/td>
+        &lt;td>{move['stamina']}&lt;/td>
+        &lt;td>{move['impact']}&lt;/td>
+        &lt;td>{move['frames']['startup']}&lt;/td>
+        &lt;td>{move['frames']['advantage']['hit']}&lt;/td>
+        &lt;td>{move['frames']['advantage']['guard']}&lt;/td>
+        {myKeys.length === 1 ?
+          &lt;React.Fragment>
+            &lt;td>&lt;Stance dir={myKeys[0]} />&lt;/td>
+            &lt;td>&lt;Stance dir={move['stance'][deckType][myKeys[0]]} />&lt;/td>
+          &lt;/React.Fragment>
+          :
+          mergeStance(move['stance'][movesDeckType])
+      }
+      &lt;/tr>
+    );
+  });
+
+  return (
+    &lt;div className="Absolver-movelist">
+      &lt;Movebar />
+      &lt;table>
+        &lt;thead>
+          &lt;tr>
+            &lt;th>Name&lt;/th>
+            &lt;th>Style&lt;/th>
+            &lt;th>Type&lt;/th>
+            &lt;th>Pwr&lt;/th>
+            &lt;th>Str&lt;/th>
+            &lt;th>Dext&lt;/th>
+            &lt;th>Mob&lt;/th>
+            &lt;th>Dmg&lt;/th>
+            &lt;th>Rng&lt;/th>
+            &lt;th>Stam&lt;/th>
+            &lt;th>Impact&lt;/th>
+            &lt;th>Start&lt;/th>
+            &lt;th>Adv: Hit&lt;/th>
+            &lt;th>Adv:Guard&lt;/th>
+            &lt;th>Starts in&lt;/th>
+            &lt;th>Ends in&lt;/th>
+          &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>{moves}&lt;/tbody>
+      &lt;/table>
+    &lt;/div>
+  )
+}
+
+export default Movelist;</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>
