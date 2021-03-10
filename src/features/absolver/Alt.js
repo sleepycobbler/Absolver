@@ -2,7 +2,8 @@ import Stance from './Stance';
 import Move from './Move';
 
 /**
- * This section represents the structure for an Alternative move, or 'Alt' for short.
+ * This section represents the structure for an Alternative move, or 'Alt' for short. It contains 
+ * 2 stance components and 1 Move component.
  * @component
  * @param {Array.<int>} stances - The array of stances for the row of moves. 
  * @param {int} row - The row index number

@@ -4,7 +4,8 @@ import Stance from './Stance';
 import React from 'react';
 
 /**
- * Creates a list of moves in column form
+ * Creates a list of moves in column form. Contains the movebar component, and then a 
+ * custom made table.
  * @component
  * @param {string} deckType - The current type of deck (barehands, wargloves, or sword)
  * @param {int} column - The current target column number.
