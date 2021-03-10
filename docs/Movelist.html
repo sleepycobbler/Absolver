@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Deckbuilder</title>
+  <title> Movelist</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -78,7 +78,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Components</p>
-                    <h1>Deckbuilder</h1>
+                    <h1>Movelist</h1>
                 </header>
                 
 
@@ -90,7 +90,7 @@
 <header>
     
         <h2>
-            &ltDeckbuilder  /&gt
+            &ltMovelist  /&gt
         </h2>
         
     
@@ -110,12 +110,12 @@
 
 
     
-    <h4 class="name" id="Deckbuilder">
-        <a class="href-link" href="#Deckbuilder">#</a>
+    <h4 class="name" id="Movelist">
+        <a class="href-link" href="#Movelist">#</a>
         
         <span class="code-name">
             
-                &ltDeckbuilder  /&gt
+                &ltMovelist  /&gt
             
         </span>
     </h4>
@@ -124,7 +124,7 @@
     
     
     <div class="description">
-        The deckbuilder is the main view of a given deck. It displays 4 Deckrow components, which form a 4x4 grid of moves.
+        Creates a list of moves in column form. Contains the movebar component, and then a custom made table.
     </div>
     
 
@@ -164,13 +164,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>moveClick</code></td>
+      <td class="name"><code>deckType</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">function</span>
+<span class="param-type">string</span>
 
 
   
@@ -180,7 +180,7 @@
 
   
 
-  <td class="description last">Click event that sets target row and column.</td>
+  <td class="description last">The current type of deck (barehands, wargloves, or sword)</td>
 </tr>
 
 
@@ -189,13 +189,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>moveDelete</code></td>
+      <td class="name"><code>column</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">function</span>
+<span class="param-type">int</span>
 
 
   
@@ -205,7 +205,7 @@
 
   
 
-  <td class="description last">Click event that removes current move data from a target row and column</td>
+  <td class="description last">The current target column number.</td>
 </tr>
 
 
@@ -214,13 +214,13 @@
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>deckArray</code></td>
+      <td class="name"><code>row</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type">int</span>
 
 
   
@@ -230,7 +230,32 @@
 
   
 
-  <td class="description last">An array of move rows.</td>
+  <td class="description last">The current target row number.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>usedMoves</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Array.&lt;Array.&lt;string>></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The current moves within the deck.</td>
 </tr>
 
 
@@ -255,7 +280,32 @@
 
   
 
-  <td class="description last">An array of stance positions.</td>
+  <td class="description last">The stances for the current row.</td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>rowClick</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">function</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last">The event that triggers when a row within the list is clicked on.</td>
 </tr>
 
 
@@ -308,9 +358,9 @@
 
     
         <p class="tag-source">
-            <a href="Deckbuilder.js.html" class="button">View Source</a>
+            <a href="Movelist.js.html" class="button">View Source</a>
             <span>
-                <a href="Deckbuilder.js.html">Deckbuilder.js</a>, <a href="Deckbuilder.js.html#line15">line 15</a>
+                <a href="Movelist.js.html">Movelist.js</a>, <a href="Movelist.js.html#line96">line 96</a>
             </span>
         </p>
     
@@ -341,7 +391,7 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'>A div with 4 Deckrow components</div>
+    <div class='param-desc column is-7'>A div with a movebar component, and a table listing all moves available.</div>
     
     
 </div>

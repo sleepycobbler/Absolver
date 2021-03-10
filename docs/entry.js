@@ -43,17 +43,17 @@ reactComponents['Footer'] = Component5;
 import Component6 from '../src/features/absolver/Header.js';
 reactComponents['Header'] = Component6;
 
-import Component7 from '../src/features/absolver/Movelist.js';
-reactComponents['Movelist'] = Component7;
+import Component7 from '../src/features/absolver/Move.js';
+reactComponents['Move'] = Component7;
 
-import Component8 from '../src/features/absolver/Move.js';
-reactComponents['Move'] = Component8;
+import Component8 from '../src/features/absolver/Movebar.js';
+reactComponents['Movebar'] = Component8;
 
-import Component9 from '../src/features/absolver/Movebar.js';
-reactComponents['Movebar'] = Component9;
+import Component9 from '../src/features/absolver/Movechooser.js';
+reactComponents['Movechooser'] = Component9;
 
-import Component10 from '../src/features/absolver/Movechooser.js';
-reactComponents['Movechooser'] = Component10;
+import Component10 from '../src/features/absolver/Movelist.js';
+reactComponents['Movelist'] = Component10;
 
 import Component11 from '../src/features/absolver/Sidebar.js';
 reactComponents['Sidebar'] = Component11;
