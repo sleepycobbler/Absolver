@@ -2,6 +2,8 @@ import Movebar from './Movebar';
 import filterMoves from './filter'
 import Stance from './Stance';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {selectMoveSort, setMoveSort} from './slices/loadoutSlice';
 
 const mergeStance = (stanDict) => {
   var stan1 = Number(Object.keys(stanDict)[0])
@@ -101,7 +103,7 @@ const Movelist = ({
   column,
   stances,
 }) => {
-  var moveData = filterMoves(usedMoves, deckType, column, stances);
+  var moveData = filterMoves(usedMoves, deckType, column, stances, useSelector(selectMoveSort));
   var movesDeckType = deckType==='sword' ?  'sword': 'barehands';
 
   const moves = moveData.map(move => {
@@ -112,13 +114,13 @@ const Movelist = ({
         <td>{move['style']}</td>
         <td>{move['type']}</td>
         <td>{move['power']}</td>
-        <td>{move['stats']['str']}</td>
+        {/*<td>{move['stats']['str']}</td>
         <td>{move['stats']['dex']}</td>
-        <td>{move['stats']['mob']}</td>
+        <td>{move['stats']['mob']}</td>*/}
         <td>{move['damage']}</td>
         <td>{move['range']}</td>
-        <td>{move['stamina']}</td>
-        <td>{move['impact']}</td>
+        {/*<td>{move['stamina']}</td>
+        <td>{move['impact']}</td>*/}
         <td>{move['frames']['startup']}</td>
         <td>{move['frames']['advantage']['hit']}</td>
         <td>{move['frames']['advantage']['guard']}</td>
@@ -144,13 +146,13 @@ const Movelist = ({
             <th>Style</th>
             <th>Type</th>
             <th>Pwr</th>
-            <th>Str</th>
-            <th>Dext</th>
-            <th>Mob</th>
+            {/*<th>Str</th>
+            <th>Dex</th>
+            <th>Mob</th>*/}
             <th>Dmg</th>
             <th>Rng</th>
-            <th>Stam</th>
-            <th>Impact</th>
+            {/*<th>Stam</th>
+            <th>Impact</th>*/}
             <th>Start</th>
             <th>Adv: Hit</th>
             <th>Adv:Guard</th>

@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import * as data from './Moves';
 
 /**
@@ -14,7 +15,8 @@ const filterMoves = (
   usedMoves, 
   deckType, 
   column, 
-  stances
+  stances,
+  moveSort
 ) => {
   var movesDeckType = deckType === 'sword' ? 'sword' : 'barehands';
   var stance1;
@@ -175,6 +177,8 @@ const filterMoves = (
       );
     }
   }
+
+  moveData = moveData.sort((a, b) => (a[useSelector(moveSort)] - b[useSelector(moveSort)]))
 
   return moveData;
 }

@@ -18,6 +18,7 @@ export const loadoutSlice = createSlice({
     targetColumn: -1,
     barehandsMoveData: data.getBareHands(),
     swordMoveData: data.getSword(),
+    moveSort: 'name',
     sideBarIsOpen: false,
     hoveredMove: 'none',
     activeMove: 'none',
@@ -167,8 +168,13 @@ export const loadoutSlice = createSlice({
         throw new Error('Column target contains invalid value.');
       }
     },
-    setStanceDiamonds: (state, action) => {
-
+    setMoveSort: (state, action) => {
+      if (['name', 'style', 'type', 'power', 'damage', 'range', 
+           'startup', 'advantage: hit', 'advantage: guard'].includes(action.payload)){
+        state.moveSort = action.payload;
+      } else {
+        throw new Error('Invalid sort type.');
+      }
     }
   }
 })
@@ -202,5 +208,6 @@ export const selectBarehandMoveData = state => state.loadout.barehandsMoveData;
 export const selectSwordMoveData = state => state.loadout.swordMoveData;
 export const selectTargetRow = state => state.loadout.targetRow;
 export const selectTargetColumn = state => state.loadout.targetColumn;
+export const selectMoveSort = state => state.loadout.moveSort;
 
 export default loadoutSlice.reducer;
