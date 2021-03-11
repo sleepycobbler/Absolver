@@ -177,6 +177,21 @@ const filterMoves = (
     }
   }
 
+  // sort by name
+  const nameSorter = (a, b) => {
+    var nameA = a[moveSort].toUpperCase(); // ignore upper and lowercase
+    var nameB = b[moveSort].toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  }
+
   switch (moveSort) {
     case 'hit':
     case 'guard':
@@ -185,8 +200,12 @@ const filterMoves = (
     case 'startup':
       moveData = moveData.sort((a, b) => (a['frames'][moveSort] - b['frames'][moveSort]));
       break;
-    default:
+    case 'damage':
+    case 'range':
       moveData = moveData.sort((a, b) => (a[moveSort] - b[moveSort]));
+      break;
+    default:
+      moveData = moveData.sort(nameSorter);
       break;
   }
   
