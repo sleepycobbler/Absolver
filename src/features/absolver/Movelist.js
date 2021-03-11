@@ -103,6 +103,7 @@ const Movelist = ({
   column,
   stances,
 }) => {
+  const dispatch = useDispatch();
   var moveData = filterMoves(usedMoves, deckType, column, stances, useSelector(selectMoveSort));
   var movesDeckType = deckType==='sword' ?  'sword': 'barehands';
 
@@ -142,20 +143,20 @@ const Movelist = ({
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Style</th>
-            <th>Type</th>
-            <th>Pwr</th>
+            <th onClick={dispatch(setMoveSort('name'))}>Name</th>
+            <th onClick={dispatch(setMoveSort('style'))}>Style</th>
+            <th onClick={dispatch(setMoveSort('type'))}>Type</th>
+            <th onClick={dispatch(setMoveSort('power'))}>Pwr</th>
             {/*<th>Str</th>
             <th>Dex</th>
             <th>Mob</th>*/}
-            <th>Dmg</th>
-            <th>Rng</th>
+            <th onClick={dispatch(setMoveSort('damage'))}>Dmg</th>
+            <th onClick={dispatch(setMoveSort('range'))}>Rng</th>
             {/*<th>Stam</th>
             <th>Impact</th>*/}
-            <th>Start</th>
-            <th>Adv: Hit</th>
-            <th>Adv:Guard</th>
+            <th onClick={dispatch(setMoveSort('startup'))}>Startup</th>
+            <th onClick={dispatch(setMoveSort('hit'))}>Adv: Hit</th>
+            <th onClick={dispatch(setMoveSort('guard'))}>Adv:Guard</th>
             <th>Starts in</th>
             <th>Ends in</th>
           </tr>

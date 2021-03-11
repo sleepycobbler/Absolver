@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import * as data from './Moves';
 
 /**
@@ -178,7 +177,19 @@ const filterMoves = (
     }
   }
 
-  moveData = moveData.sort((a, b) => (a[useSelector(moveSort)] - b[useSelector(moveSort)]))
+  switch (moveSort) {
+    case 'hit':
+    case 'guard':
+      moveData = moveData.sort((a, b) => (a['frames']['advantage'][moveSort] - b['frames']['advantage'][moveSort]));
+      break;
+    case 'startup':
+      moveData = moveData.sort((a, b) => (a['frames'][moveSort] - b['frames'][moveSort]));
+      break;
+    default:
+      moveData = moveData.sort((a, b) => (a[moveSort] - b[moveSort]));
+      break;
+  }
+  
 
   return moveData;
 }

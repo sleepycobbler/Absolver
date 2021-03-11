@@ -170,7 +170,7 @@ export const loadoutSlice = createSlice({
     },
     setMoveSort: (state, action) => {
       if (['name', 'style', 'type', 'power', 'damage', 'range', 
-           'startup', 'advantage: hit', 'advantage: guard'].includes(action.payload)){
+           'startup', 'hit', 'guard'].includes(action.payload)){
         state.moveSort = action.payload;
       } else {
         throw new Error('Invalid sort type.');
@@ -192,7 +192,8 @@ export const {
   setTargetRow,
   setTargetColumn,
   setActiveMove,
-  moveRemove
+  moveRemove,
+  setMoveSort
 } = loadoutSlice.actions;
 export const selectStyle = state => state.loadout.style;
 export const selectTargetDeckType = state => state.loadout.targetDeckType;
